@@ -16,10 +16,20 @@ import ListItem from "@mui/material/ListItem";
 import ListItemButton from "@mui/material/ListItemButton";
 import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
-import InboxIcon from "@mui/icons-material/MoveToInbox";
-import MailIcon from "@mui/icons-material/Mail";
-import Todo from "../todo/Todo";
-import Expence from "../expence/Expence";
+import Todo from "./todo/Todo";
+import Task from "./task/Task";
+import Event from "./event/Event";
+import Target from "./target/Target";
+import Habit from "./habit/Habit";
+import Dashboard from "./dashboard/Dashboard";
+import Expence from "./expence/Expence";
+import SpaceDashboardIcon from "@mui/icons-material/SpaceDashboard";
+import ChecklistRtlIcon from "@mui/icons-material/ChecklistRtl";
+import AttachMoneyIcon from "@mui/icons-material/AttachMoney";
+import FlagIcon from "@mui/icons-material/Flag";
+import WorkOutlineIcon from "@mui/icons-material/WorkOutline";
+import FitnessCenterIcon from "@mui/icons-material/FitnessCenter";
+import EventAvailableIcon from "@mui/icons-material/EventAvailable";
 
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
@@ -140,9 +150,18 @@ export default function MiniDrawer() {
         </DrawerHeader>
         <Divider />
         <List>
-          {["Inbox", "Starred", "Send email", "Drafts"].map((text, index) => (
+          {[
+            "Todo",
+            "Task",
+            "Event",
+            "Habit",
+            "Target",
+            "Expence",
+            "Dashboard",
+          ].map((text, index) => (
             <ListItem key={text} disablePadding sx={{ display: "block" }}>
               <ListItemButton
+                href={`/${text.toLowerCase()}`}
                 sx={{
                   minHeight: 48,
                   justifyContent: open ? "initial" : "center",
@@ -156,7 +175,23 @@ export default function MiniDrawer() {
                     justifyContent: "center",
                   }}
                 >
-                  {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
+                  {text === "Dashboard" ? (
+                    <SpaceDashboardIcon />
+                  ) : text === "Event" ? (
+                    <EventAvailableIcon />
+                  ) : text === "Expence" ? (
+                    <AttachMoneyIcon />
+                  ) : text === "Habit" ? (
+                    <FitnessCenterIcon />
+                  ) : text === "Target" ? (
+                    <FlagIcon />
+                  ) : text === "Task" ? (
+                    <WorkOutlineIcon />
+                  ) : text === "Todo" ? (
+                    <ChecklistRtlIcon />
+                  ) : (
+                    ""
+                  )}
                 </ListItemIcon>
                 <ListItemText primary={text} sx={{ opacity: open ? 1 : 0 }} />
               </ListItemButton>
@@ -164,37 +199,22 @@ export default function MiniDrawer() {
           ))}
         </List>
         <Divider />
-        <List>
-          {["All mail", "Trash", "Spam"].map((text, index) => (
-            <ListItem key={text} disablePadding sx={{ display: "block" }}>
-              <ListItemButton
-                sx={{
-                  minHeight: 48,
-                  justifyContent: open ? "initial" : "center",
-                  px: 2.5,
-                }}
-              >
-                <ListItemIcon
-                  sx={{
-                    minWidth: 0,
-                    mr: open ? 3 : "auto",
-                    justifyContent: "center",
-                  }}
-                >
-                  {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-                </ListItemIcon>
-                <ListItemText primary={text} sx={{ opacity: open ? 1 : 0 }} />
-              </ListItemButton>
-            </ListItem>
-          ))}
-        </List>
+        <List></List>
       </Drawer>
-      <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
+      <Box
+        component="main"
+        sx={{ flexGrow: 1, p: 3, fontSize: 90, fontWeight: 700 }}
+      >
         <DrawerHeader />
         <Router>
           <Routes>
-            <Route path="/todo" element={<Todo></Todo>}></Route>
+            <Route path="/event" element={<Event></Event>}></Route>
             <Route path="/expence" element={<Expence></Expence>}></Route>
+            <Route path="/dashboard" element={<Dashboard></Dashboard>}></Route>
+            <Route path="/habit" element={<Habit></Habit>}></Route>
+            <Route path="/target" element={<Target></Target>}></Route>
+            <Route path="/task" element={<Task></Task>}></Route>
+            <Route path="/todo" element={<Todo></Todo>}></Route>
           </Routes>
         </Router>
       </Box>
