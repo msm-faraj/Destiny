@@ -1,7 +1,7 @@
 services:
   postgres_db:
     image: postgres:16.1
-    container_name: exp-postgres-cnt
+    container_name: app-postgres-cnt
     environment:
       POSTGRES_PASSWORD: app-pass
       POSTGRES_USER: app-user
@@ -10,6 +10,8 @@ services:
       - 5000:5432
     volumes:
       - postgres_db:/var/lib/postgresql/data
+    networks:
+      - app_net
 
   server:
     build: ./app-server
@@ -18,6 +20,8 @@ services:
       - 4000:4000
     volumes:
       - ./app-server:/app-server
+    networks:
+      - app_net
 
   client:
     build: ./app-client
@@ -26,6 +30,12 @@ services:
       - 3000:3000
     volumes:
       - ./app-client:/app-client
+    networks:
+      - app_net
 
 volumes:
   postgres_db:
+
+networks:
+  app_net:
+    driver: "bridge"
