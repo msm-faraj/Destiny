@@ -1,3 +1,4 @@
+CREATE DATABASE destiny_db;
 
 CREATE TABLE todos(
 	todo_id SERIAL PRIMARY KEY,
