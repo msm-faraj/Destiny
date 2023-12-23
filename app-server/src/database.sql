@@ -10,7 +10,7 @@ CREATE TABLE todos(
 )
 
 
-CREATE TABLE expences(
+CREATE TABLE expenses(
 	exp_id SERIAL PRIMARY KEY,
 	exp_time TIMESTAMP,
 	amount NUMERIC(2),

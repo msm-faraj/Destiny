@@ -1,11 +1,11 @@
 services:
   postgres_db:
     image: postgres:16.1
-    container_name: app-postgres-cnt
+    container_name: destiny-postgres-cnt
     environment:
-      POSTGRES_PASSWORD: app-pass
+      POSTGRES_PASSWORD: destiny-pass
       POSTGRES_USER: app-user
-      POSTGRES_DB: app_db
+      POSTGRES_DB: destiny_db
     ports:
       - 5000:5432
     volumes:
@@ -15,7 +15,7 @@ services:
 
   server:
     build: ./app-server
-    container_name: app-server-cnt
+    container_name: destiny-server-cnt
     ports:
       - 4000:4000
     volumes:
@@ -25,7 +25,7 @@ services:
 
   client:
     build: ./app-client
-    container_name: app-client-cnt
+    container_name: destiny-client-cnt
     ports:
       - 3000:3000
     volumes:
