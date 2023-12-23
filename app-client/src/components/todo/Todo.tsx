@@ -1,21 +1,23 @@
 import TodoList from "./TodoList";
-import { Divider } from "@mui/material";
 import TodoForm from "./TodoForm";
 import TodoButton from "./TodoButton";
 import { Box } from "@mui/system";
+import { Divider } from "@mui/material";
 
 const Todo = () => {
   return (
     <>
       <div>Todo</div>
+      <Divider />
       <Box
-        gap={2}
         display={"flex"}
         flexDirection={"column"}
-        alignItems={"center"}
+        gap={2}
+        alignItems={"right"}
       >
         <TodoForm></TodoForm>
         <TodoButton></TodoButton>
+        <Divider />
         <TodoList></TodoList>
       </Box>
     </>
