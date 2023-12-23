@@ -22,7 +22,7 @@ import Event from "./event/Event";
 import Target from "./target/Target";
 import Habit from "./habit/Habit";
 import Dashboard from "./dashboard/Dashboard";
-import Expence from "./expence/Expence";
+import Expense from "./expense/Expense";
 import SpaceDashboardIcon from "@mui/icons-material/SpaceDashboard";
 import ChecklistRtlIcon from "@mui/icons-material/ChecklistRtl";
 import AttachMoneyIcon from "@mui/icons-material/AttachMoney";
@@ -157,7 +157,7 @@ export default function MiniDrawer() {
             "Event",
             "Habit",
             "Target",
-            "Expence",
+            "Expense",
             "Dashboard",
           ].map((text, index) => (
             <ListItem key={text} disablePadding sx={{ display: "block" }}>
@@ -180,7 +180,7 @@ export default function MiniDrawer() {
                     <SpaceDashboardIcon />
                   ) : text === "Event" ? (
                     <EventAvailableIcon />
-                  ) : text === "Expence" ? (
+                  ) : text === "Expense" ? (
                     <AttachMoneyIcon />
                   ) : text === "Habit" ? (
                     <FitnessCenterIcon />
@@ -210,7 +210,7 @@ export default function MiniDrawer() {
         <Router>
           <Routes>
             <Route path="/event" element={<Event></Event>}></Route>
-            <Route path="/expence" element={<Expence></Expence>}></Route>
+            <Route path="/expense" element={<Expense></Expense>}></Route>
             <Route path="/dashboard" element={<Dashboard></Dashboard>}></Route>
             <Route path="/habit" element={<Habit></Habit>}></Route>
             <Route path="/target" element={<Target></Target>}></Route>

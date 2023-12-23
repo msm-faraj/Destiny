@@ -1,7 +1,7 @@
 import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
 
-export default function ExpenceInput() {
+export default function ExpenseInput() {
   return (
     <Box
       component="form"
