@@ -134,12 +134,13 @@ export default function MiniDrawer() {
             <MenuIcon />
           </IconButton>
           <Typography variant="h6" noWrap component="div">
-            Mini variant drawer
+            msm-faraj
           </Typography>
         </Toolbar>
       </AppBar>
       <Drawer variant="permanent" open={open}>
-        <DrawerHeader>
+        <DrawerHeader sx={{ display: "flex", justifyContent: "space-between" }}>
+          <p>Destiny Will Maden By</p>
           <IconButton onClick={handleDrawerClose}>
             {theme.direction === "rtl" ? (
               <ChevronRightIcon />
@@ -203,7 +204,7 @@ export default function MiniDrawer() {
       </Drawer>
       <Box
         component="main"
-        sx={{ flexGrow: 1, p: 3, fontSize: 90, fontWeight: 700 }}
+        sx={{ flexGrow: 1, p: 3, fontSize: 40, fontWeight: 700 }}
       >
         <DrawerHeader />
         <Router>
