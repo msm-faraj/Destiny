@@ -8,15 +8,15 @@ import Checkbox from "@mui/material/Checkbox";
 import IconButton from "@mui/material/IconButton";
 import CommentIcon from "@mui/icons-material/Comment";
 
-export default function CheckboxList() {
+export default function TodoList() {
   const [checked, setChecked] = React.useState([0]);
 
-  const handleToggle = (value: number) => () => {
-    const currentIndex = checked.indexOf(value);
+  const handleToggle = (vlue: number) => () => {
+    const currentIndex = checked.indexOf(vlue);
     const newChecked = [...checked];
 
     if (currentIndex === -1) {
-      newChecked.push(value);
+      newChecked.push(vlue);
     } else {
       newChecked.splice(currentIndex, 1);
     }
@@ -53,7 +53,7 @@ export default function CheckboxList() {
                   inputProps={{ "aria-labelledby": labelId }}
                 />
               </ListItemIcon>
-              <ListItemText id={labelId} primary={`Line item ${value + 1}`} />
+              <ListItemText id={labelId} primary={value} />
             </ListItemButton>
           </ListItem>
         );
