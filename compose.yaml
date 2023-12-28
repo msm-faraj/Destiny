@@ -4,38 +4,35 @@ services:
     container_name: destiny-postgres-cnt
     environment:
       POSTGRES_PASSWORD: destiny-pass
-      POSTGRES_USER: app-user
+      POSTGRES_USER: destiny-user
       POSTGRES_DB: destiny_db
     ports:
-      - 5000:5432
+      - 5432:5432
     volumes:
       - postgres_db:/var/lib/postgresql/data
     networks:
-      - app_net
+      - destiny-net
 
   server:
     build: ./app-server
     container_name: destiny-server-cnt
     ports:
       - 4000:4000
-    volumes:
-      - ./app-server:/app-server
+
     networks:
-      - app_net
+      - destiny-net
 
   client:
     build: ./app-client
     container_name: destiny-client-cnt
     ports:
       - 3000:3000
-    volumes:
-      - ./app-client:/app-client
-    networks:
-      - app_net
 
+    networks:
+      - destiny-net
 volumes:
   postgres_db:
 
 networks:
-  app_net:
+  destiny-net:
     driver: "bridge"

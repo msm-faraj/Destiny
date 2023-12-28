@@ -12,7 +12,7 @@
 2.server going to work in localhost 4000
 3.postgres going to service on
 [] - localhost on port 5000 &
-[] - docker-network with name of "app_net" on port 5432
+[] - docker-network with name of "destiny-net" on port 5432
 
 # In docker
 
