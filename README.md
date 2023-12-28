@@ -5,6 +5,7 @@
 # RUN command
 
 [] - "docker-compose up"
+[] - aldo you shoud change path in the volums for hot replacement workd
 
 # After run...
 

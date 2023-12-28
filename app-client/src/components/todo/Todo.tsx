@@ -7,7 +7,7 @@ import { Divider } from "@mui/material";
 const Todo = () => {
   return (
     <>
-      <div>Todo</div>
+      <div>Todo-new</div>
       <Divider />
       <Box
         display={"flex"}
