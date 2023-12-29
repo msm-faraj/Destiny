@@ -1,12 +1,7 @@
-import "./App.css";
-import MiniDrawer from "./components/MiniDrawer";
+import { Button, ButtonGroup } from "@chakra-ui/react";
 
 function App() {
-  return (
-    <div className="App">
-      <MiniDrawer></MiniDrawer>
-    </div>
-  );
+  return <Button colorScheme="blue">Button</Button>;
 }
 
 export default App;
