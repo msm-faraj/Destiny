@@ -5,18 +5,17 @@ import { Link } from "react-router-dom";
 interface Props {
   children: ReactNode;
   text: string;
-  color: string;
 }
 
-const SideBarItem = ({ children, text, color }: Props) => {
+const SideBarItem = ({ children, text }: Props) => {
   return (
     <Flex w={"full"} gap={1}>
       <Link to={text}>
-        <Box display="flex" flexDirection={"row"}>
-          <Icon h={8} w={8} color={color}>
+        <Box display="flex" flexDirection={"row"} color={"warning"} gap={1}>
+          <Icon h={8} w={8}>
             {children}
           </Icon>
-          <Text color={color}>{text}</Text>
+          <Text>{text}</Text>
         </Box>
       </Link>
     </Flex>
