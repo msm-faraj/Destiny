@@ -11,32 +11,35 @@ import SideBarItem from "./SideBarItem";
 const SideBar = () => {
   return (
     <VStack
+      bg="primary"
       p={5}
+      pt={8}
+      pb={8}
+      spacing={8}
       fontWeight={"900"}
       fontSize={"1.2rem"}
-      spacing={5}
-      bg={"#bb3e03"}
       h={"full"}
+      borderRadius={10}
     >
-      <SideBarItem text={"Daily"} color={"#94d2bd"}>
+      <SideBarItem text={"Daily"}>
         <FaCalendarDay />
       </SideBarItem>
-      <SideBarItem text={"Todo"} color={"#94d2bd"}>
+      <SideBarItem text={"Todo"}>
         <MdFactCheck />
       </SideBarItem>
-      <SideBarItem text={"Task"} color={"#94d2bd"}>
+      <SideBarItem text={"Task"}>
         <GrTasks />
       </SideBarItem>
-      <SideBarItem text={"Habit"} color={"#94d2bd"}>
+      <SideBarItem text={"Habit"}>
         <BsUiChecksGrid />
       </SideBarItem>
-      <SideBarItem text={"Event"} color={"#94d2bd"}>
+      <SideBarItem text={"Event"}>
         <IoBookmarks />
       </SideBarItem>
-      <SideBarItem text={"Expence"} color={"#94d2bd"}>
+      <SideBarItem text={"Expence"}>
         <HiMiniShoppingBag />
       </SideBarItem>
-      <SideBarItem text={"Dashboard"} color={"#94d2bd"}>
+      <SideBarItem text={"Dashboard"}>
         <MdDashboard />
       </SideBarItem>
     </VStack>

@@ -1,7 +1,7 @@
 import { Button, ButtonGroup, Grid, GridItem, Show } from "@chakra-ui/react";
-import SideBar from "./components/sidebar/SideBar";
-import TopBar from "./components/TopBar";
-import LayOut from "./components/LayOut";
+import SideBar from "./components/layout/SideBar";
+import TopBar from "./components/layout/TopBar";
+import LayOut from "./components/layout/LayOut";
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import Daily from "./components/daily/Daily";
 import Todo from "./components/todo/Todo";
@@ -10,39 +10,39 @@ import Habit from "./components/Habit/Habit";
 import Event from "./components/Event/Event";
 import Expence from "./components/expence/Expence";
 import Dashboard from "./components/dashboard/Dashboard";
+import Footer from "./components/layout/Footer";
+import Main from "./components/layout/Main";
 
 function App() {
   return (
     <BrowserRouter>
       <LayOut>
-        <GridItem area="header" bg="#005f73">
+        <GridItem area="header">
           <TopBar></TopBar>
         </GridItem>
+
         <Show above="md">
-          <GridItem area="aside" bg="#94d2bd">
+          <GridItem area="aside">
             <SideBar></SideBar>
           </GridItem>
         </Show>
-        <GridItem area="main" bg="#0A9396">
-          Main
-          <Routes>
-            <Route path="/daily" element={<Daily />} />
-            <Route path="/todo" element={<Todo />} />
-            <Route path="/task" element={<Task />} />
-            <Route path="/habit" element={<Habit />} />
-            <Route path="/event" element={<Event />} />
-            <Route path="/expence" element={<Expence />} />
-            <Route path="/dashboard" element={<Dashboard />} />
-          </Routes>
+
+        <GridItem area="main">
+          <Main>
+            <Routes>
+              <Route path="/daily" element={<Daily />} />
+              <Route path="/todo" element={<Todo />} />
+              <Route path="/task" element={<Task />} />
+              <Route path="/habit" element={<Habit />} />
+              <Route path="/event" element={<Event />} />
+              <Route path="/expence" element={<Expence />} />
+              <Route path="/dashboard" element={<Dashboard />} />
+            </Routes>
+          </Main>
         </GridItem>
-        <GridItem
-          area="footer"
-          bg="#005f73"
-          color="#ca6702"
-          fontSize={"2rem"}
-          fontWeight={"900"}
-        >
-          Footer
+
+        <GridItem area="footer">
+          <Footer></Footer>
         </GridItem>
       </LayOut>
     </BrowserRouter>
