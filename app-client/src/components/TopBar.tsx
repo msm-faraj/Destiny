@@ -5,8 +5,8 @@ import { SiAlwaysdata } from "react-icons/si";
 const TopBar = () => {
   return (
     <HStack>
-      <SiAlwaysdata color="#94d2bd" size="40" />
-      <Text color="#94d2bd" fontSize={"2rem"} fontWeight={"900"}>
+      <SiAlwaysdata color="#Ca6702" size="40" />
+      <Text color="#Ca6702" fontSize={"2rem"} fontWeight={"900"}>
         Destiny Is Now
       </Text>
     </HStack>
