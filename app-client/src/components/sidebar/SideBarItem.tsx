@@ -1,6 +1,6 @@
-import { Box, Flex, HStack, Icon, Image, Text } from "@chakra-ui/react";
-import { Children, ReactNode } from "react";
-import { FaCalendarDay } from "react-icons/fa6";
+import { Box, Flex, Icon, Text } from "@chakra-ui/react";
+import { ReactNode } from "react";
+import { Link } from "react-router-dom";
 
 interface Props {
   children: ReactNode;
@@ -11,14 +11,14 @@ interface Props {
 const SideBarItem = ({ children, text, color }: Props) => {
   return (
     <Flex w={"full"} gap={1}>
-      <Box>
-        <Icon h={8} w={8} color={color}>
-          {children}
-        </Icon>
-      </Box>
-      <Box>
-        <Text color={color}>{text}</Text>
-      </Box>
+      <Link to={text}>
+        <Box display="flex" flexDirection={"row"}>
+          <Icon h={8} w={8} color={color}>
+            {children}
+          </Icon>
+          <Text color={color}>{text}</Text>
+        </Box>
+      </Link>
     </Flex>
   );
 };
