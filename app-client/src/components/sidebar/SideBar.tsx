@@ -10,7 +10,14 @@ import SideBarItem from "./SideBarItem";
 
 const SideBar = () => {
   return (
-    <VStack p={5} fontWeight={"900"} fontSize={"1.2rem"} spacing={5}>
+    <VStack
+      p={5}
+      fontWeight={"900"}
+      fontSize={"1.2rem"}
+      spacing={5}
+      bg={"#bb3e03"}
+      h={"full"}
+    >
       <SideBarItem text={"Daily"} color={"#94d2bd"}>
         <FaCalendarDay />
       </SideBarItem>
