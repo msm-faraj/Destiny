@@ -6,7 +6,7 @@ const Footer = () => {
     <HStack
       h={"full"}
       bg="primary"
-      color={"darkgry"}
+      color={"lightgry"}
       borderRadius={10}
       fontWeight={"400"}
       fontSize={"xxx-large"}

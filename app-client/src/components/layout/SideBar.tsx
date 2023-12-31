@@ -24,11 +24,11 @@ const SideBar = () => {
       <SideBarItem text={"Daily"}>
         <FaCalendarDay />
       </SideBarItem>
-      <SideBarItem text={"Todo"}>
-        <MdFactCheck />
-      </SideBarItem>
       <SideBarItem text={"Task"}>
         <GrTasks />
+      </SideBarItem>
+      <SideBarItem text={"Todo"}>
+        <MdFactCheck />
       </SideBarItem>
       <SideBarItem text={"Habit"}>
         <BsUiChecksGrid />

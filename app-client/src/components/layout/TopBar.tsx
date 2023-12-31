@@ -3,7 +3,7 @@ import { SiAlwaysdata } from "react-icons/si";
 import Logo from "../../assets/Logo";
 
 const TopBar = () => {
-  const color = "darkgry";
+  const color = "lightgry";
   return (
     <HStack
       pl={5}

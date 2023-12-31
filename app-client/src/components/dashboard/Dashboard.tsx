@@ -5,13 +5,19 @@ const Dashboard = () => {
   return (
     <Stack display={"flex"} alignItems={"space between"} gap={5}>
       <Box bg={"primary"} color={"danger"}>
-        Primary
+        primary
       </Box>
       <Box bg={"secondary"} color={"warning"}>
         secondary
       </Box>
-      <Box bg={"highlight"} color={"Primary"}>
+      <Box bg={"darkgry"} color={"lightgry"}>
+        darkgry
+      </Box>
+      <Box bg={"highlight"} color={"primary"}>
         highlight
+      </Box>
+      <Box bg={"lightgry"} color={"darkgry"}>
+        lightgry
       </Box>
       <Box bg={"warning"} color={"secondary"}>
         warning

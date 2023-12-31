@@ -4,9 +4,9 @@ export const destinyTheme = extendTheme({
   colors: {
     primary: "#006D77",
     secondary: "#83C5BE",
-    darkgry: "#333",
-    lightgry: "#ddd",
+    darkgry: "#666",
     highlight: "#EDF6F9",
+    lightgry: "#ccc",
     warning: "#FFDDD2",
     danger: "#E29578",
   },
