@@ -4,13 +4,15 @@ import React from "react";
 const Footer = () => {
   return (
     <HStack
-      pl={3}
       h={"full"}
       bg="primary"
-      color={"secondary"}
+      color={"darkgry"}
       borderRadius={10}
-      fontWeight={"700"}
-      fontSize={"xx-large"}
+      fontWeight={"400"}
+      fontSize={"xxx-large"}
+      display={"flex"}
+      alignItems={"center"}
+      justifyContent={"center"}
     >
       <Text>Footer</Text>
     </HStack>

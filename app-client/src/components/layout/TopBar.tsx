@@ -3,6 +3,7 @@ import { SiAlwaysdata } from "react-icons/si";
 import Logo from "../../assets/Logo";
 
 const TopBar = () => {
+  const color = "darkgry";
   return (
     <HStack
       pl={5}
@@ -10,23 +11,23 @@ const TopBar = () => {
       h="full"
       w={"full"}
       bg="primary"
-      // borderRadius={10}
-      // display={"flex"}
+      borderRadius={10}
+      display={"flex"}
       justifyContent={"space-between"}
-      // alignItems={"end"}
+      alignItems={"center"}
     >
-      {/* <SiAlwaysdata /> */}
-      <Stack
-        fontWeight={"600"}
-        fontSize={"xx-large"}
-        color={"highlight"}
-        bg="#333"
-      >
-        <Text>Destiny</Text>
+      <Stack>
+        <SiAlwaysdata color={color} fontSize={50} />
       </Stack>
 
-      <HStack h="100px" pt={3} bg="#333">
-        <Logo color={"#EDF6F9"} size={60}></Logo>
+      <Stack direction="row" color={color} alignItems={"center"}>
+        <Text fontWeight={"400"} fontSize={"xxx-large"}>
+          Destiny
+        </Text>
+      </Stack>
+
+      <HStack pt={3} mb={-1} align={"center"}>
+        <Logo color={"#222"} size={60}></Logo>
       </HStack>
     </HStack>
   );
