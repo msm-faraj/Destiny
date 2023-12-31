@@ -7,7 +7,7 @@ const Footer = () => {
       pl={3}
       h={"full"}
       bg="primary"
-      color={"danger"}
+      color={"secondary"}
       borderRadius={10}
       fontWeight={"700"}
       fontSize={"xx-large"}
