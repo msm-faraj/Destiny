@@ -1,4 +1,4 @@
-import { Box, HStack, Stack, Text } from "@chakra-ui/react";
+import { Box, HStack, Text } from "@chakra-ui/react";
 import { SiAlwaysdata } from "react-icons/si";
 import { Logo } from "../../assets/Logo";
 const TopBar = () => {

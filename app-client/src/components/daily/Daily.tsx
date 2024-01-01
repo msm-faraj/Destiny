@@ -1,8 +1,5 @@
-import { BiSolidChevronDown } from "react-icons/bi";
-
 import {
   Box,
-  Button,
   Flex,
   Input,
   Menu,

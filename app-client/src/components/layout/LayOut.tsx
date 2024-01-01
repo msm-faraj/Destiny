@@ -10,9 +10,10 @@ const LayOut = ({ children }: Props) => {
       templateAreas={{
         base: `
         "header header"
-        "main main"
+        "aside main"
         "footer footer"  
         `,
+
         md: `
         "header header"
         "aside main"

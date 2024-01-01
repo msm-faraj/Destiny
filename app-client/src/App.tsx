@@ -1,8 +1,8 @@
-import { Button, ButtonGroup, Grid, GridItem, Show } from "@chakra-ui/react";
+import { GridItem, Show } from "@chakra-ui/react";
 import SideBar from "./components/layout/SideBar";
 import TopBar from "./components/layout/TopBar";
 import LayOut from "./components/layout/LayOut";
-import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Daily from "./components/daily/Daily";
 import Todo from "./components/todo/Todo";
 import Task from "./components/task/Task";
@@ -21,7 +21,7 @@ function App() {
           <TopBar></TopBar>
         </GridItem>
 
-        <Show above="md">
+        <Show above="sm">
           <GridItem area="aside">
             <SideBar></SideBar>
           </GridItem>

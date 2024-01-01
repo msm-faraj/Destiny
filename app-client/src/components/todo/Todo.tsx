@@ -1,10 +1,10 @@
 import React from "react";
-import { Form } from "../common/Form";
+import { TodoForm } from "../common/TodoForm";
 
 const Todo = () => {
   return (
     <>
-      <Form></Form>
+      <TodoForm></TodoForm>
     </>
   );
 };
