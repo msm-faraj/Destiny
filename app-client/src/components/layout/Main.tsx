@@ -10,9 +10,9 @@ const Main = ({ children }: Props) => {
     <Grid
       bg="highlight"
       h={"full"}
-      color={"primary"}
+      color={"darkergry"}
       fontWeight={"bold"}
-      fontSize={"xxx-large"}
+      fontSize={"large"}
       p={5}
       borderRadius={10}
     >

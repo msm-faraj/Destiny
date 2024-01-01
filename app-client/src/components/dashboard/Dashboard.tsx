@@ -1,25 +1,34 @@
-import { Box, Center, Stack } from "@chakra-ui/react";
-import React from "react";
+import { Grid, GridItem } from "@chakra-ui/react";
 
 const Dashboard = () => {
   return (
-    <Stack display={"flex"} alignItems={"space between"} gap={5}>
-      <Box bg={"primary"} color={"danger"}>
-        Primary
-      </Box>
-      <Box bg={"secondary"} color={"warning"}>
-        secondary
-      </Box>
-      <Box bg={"highlight"} color={"Primary"}>
-        highlight
-      </Box>
-      <Box bg={"warning"} color={"secondary"}>
-        warning
-      </Box>
-      <Box bg={"danger"} color={"primary"}>
-        danger
-      </Box>
-    </Stack>
+    <Grid
+      templateAreas={`"task task expence"
+                    "todo habit expence"
+                    "todo footer footer"`}
+      gridTemplateRows={"1fr 2fr 1fr"}
+      gridTemplateColumns={"1fr 2fr 1fr"}
+      h="full"
+      gap="1"
+      color="blackAlpha.700"
+      fontWeight="bold"
+    >
+      <GridItem pl="2" bg="secondary" area={"task"}>
+        Task
+      </GridItem>
+      <GridItem pl="2" bg="danger" area={"todo"}>
+        Todo
+      </GridItem>
+      <GridItem pl="2" bg="primary" area={"habit"}>
+        Habit
+      </GridItem>
+      <GridItem pl="2" bg="darkgry" area={"footer"}>
+        Footer
+      </GridItem>
+      <GridItem pl="2" bg="darkergry" area={"expence"}>
+        Expence
+      </GridItem>
+    </Grid>
   );
 };
 

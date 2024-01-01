@@ -11,11 +11,11 @@ const SideBarItem = ({ children, text }: Props) => {
   return (
     <Flex w={"full"} gap={1}>
       <Link to={text}>
-        <Box display="flex" flexDirection={"row"} color={"warning"} gap={1}>
-          <Icon h={8} w={8}>
+        <Box display="flex" flexDirection={"row"} color={"lightgry"} gap={1}>
+          <Icon h={6} w={6} fontSize={20}>
             {children}
           </Icon>
-          <Text>{text}</Text>
+          <Text fontWeight={"400"}>{text}</Text>
         </Box>
       </Link>
     </Flex>

@@ -10,9 +10,10 @@ const LayOut = ({ children }: Props) => {
       templateAreas={{
         base: `
         "header header"
-        "main main"
+        "aside main"
         "footer footer"  
         `,
+
         md: `
         "header header"
         "aside main"
@@ -24,8 +25,8 @@ const LayOut = ({ children }: Props) => {
         "footer footer"  
         `,
       }}
-      gridTemplateRows={"1fr 6fr 1fr"}
-      gridTemplateColumns={"1fr 6fr"}
+      gridTemplateRows={"65px 5fr 2fr"}
+      gridTemplateColumns={"1fr 9fr"}
       gap="1"
     >
       {children}
