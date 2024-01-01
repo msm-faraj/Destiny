@@ -1,9 +1,9 @@
-import { Box, Center, Stack } from "@chakra-ui/react";
-import React from "react";
+import { Box, Stack } from "@chakra-ui/react";
+import { Logo } from "../../assets/Logo";
 
 const Dashboard = () => {
   return (
-    <Stack display={"flex"} alignItems={"space between"} gap={5}>
+    <Stack display={"flex"} alignItems={"space between"} gap={0}>
       <Box bg={"primary"} color={"danger"}>
         primary
       </Box>
@@ -24,6 +24,15 @@ const Dashboard = () => {
       </Box>
       <Box bg={"danger"} color={"primary"}>
         danger
+      </Box>
+      <Box
+        borderRadius={20}
+        bg={"secondary"}
+        display={"flex"}
+        justifyContent={"center"}
+        alignItems={"center"}
+      >
+        <Logo size={300} color="#333"></Logo>
       </Box>
     </Stack>
   );

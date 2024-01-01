@@ -2,11 +2,12 @@ import { extendTheme } from "@chakra-ui/react";
 
 export const destinyTheme = extendTheme({
   colors: {
+    darkergry: "#444",
     primary: "#006D77",
     secondary: "#83C5BE",
-    darkgry: "#666",
+    darkgry: "#999",
     highlight: "#EDF6F9",
-    lightgry: "#ccc",
+    lightgry: "#ddd",
     warning: "#FFDDD2",
     danger: "#E29578",
   },

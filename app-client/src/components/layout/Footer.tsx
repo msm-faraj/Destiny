@@ -9,7 +9,7 @@ const Footer = () => {
       color={"lightgry"}
       borderRadius={10}
       fontWeight={"400"}
-      fontSize={"xxx-large"}
+      fontSize={"xx-large"}
       display={"flex"}
       alignItems={"center"}
       justifyContent={"center"}
