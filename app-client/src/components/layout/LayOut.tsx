@@ -24,8 +24,8 @@ const LayOut = ({ children }: Props) => {
         "footer footer"  
         `,
       }}
-      gridTemplateRows={"60px 6fr 1fr"}
-      gridTemplateColumns={"1fr 6fr"}
+      gridTemplateRows={"65px 5fr 2fr"}
+      gridTemplateColumns={"1fr 9fr"}
       gap="1"
     >
       {children}

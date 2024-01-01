@@ -13,19 +13,19 @@ const Dashboard = () => {
       color="blackAlpha.700"
       fontWeight="bold"
     >
-      <GridItem pl="2" bg="orange.300" area={"task"}>
+      <GridItem pl="2" bg="secondary" area={"task"}>
         Task
       </GridItem>
-      <GridItem pl="2" bg="pink.300" area={"todo"}>
+      <GridItem pl="2" bg="danger" area={"todo"}>
         Todo
       </GridItem>
-      <GridItem pl="2" bg="green.300" area={"habit"}>
+      <GridItem pl="2" bg="primary" area={"habit"}>
         Habit
       </GridItem>
-      <GridItem pl="2" bg="blue.300" area={"footer"}>
+      <GridItem pl="2" bg="darkgry" area={"footer"}>
         Footer
       </GridItem>
-      <GridItem pl="2" bg="blue.300" area={"expence"}>
+      <GridItem pl="2" bg="darkergry" area={"expence"}>
         Expence
       </GridItem>
     </Grid>

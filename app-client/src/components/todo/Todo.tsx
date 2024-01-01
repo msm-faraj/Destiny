@@ -1,7 +1,12 @@
 import React from "react";
+import { Form } from "../common/Form";
 
 const Todo = () => {
-  return <div>Todo</div>;
+  return (
+    <>
+      <Form></Form>
+    </>
+  );
 };
 
 export default Todo;
