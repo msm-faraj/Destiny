@@ -8,9 +8,9 @@ interface Props {
 const Main = ({ children }: Props) => {
   return (
     <Grid
-      bg="highlight"
+      bg="primary3"
       h={"full"}
-      color={"darkergry"}
+      color={"gray1"}
       fontWeight={"bold"}
       fontSize={"large"}
       p={5}

@@ -12,6 +12,7 @@ import Expence from "./components/expence/Expence";
 import Dashboard from "./components/dashboard/Dashboard";
 import Footer from "./components/layout/Footer";
 import Main from "./components/layout/Main";
+import { ColorPalette } from "./components/Theme/ColorPalette";
 
 function App() {
   return (
@@ -37,6 +38,7 @@ function App() {
               <Route path="/event" element={<Event />} />
               <Route path="/expence" element={<Expence />} />
               <Route path="/dashboard" element={<Dashboard />} />
+              <Route path="/colors" element={<ColorPalette />} />
             </Routes>
           </Main>
         </GridItem>

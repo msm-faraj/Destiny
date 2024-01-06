@@ -2,53 +2,26 @@ import { extendTheme } from "@chakra-ui/react";
 
 export const destinyTheme = extendTheme({
   colors: {
-    darkergry: "#444",
-    primary: "#006D77",
-    secondary: "#83C5BE",
-    darkgry: "#999",
-    highlight: "#EDF6F9",
-    lightgry: "#ddd",
-    warning: "#FFDDD2",
-    danger: "#E29578",
+    primary1: "hsl(180, 50%, 18%)",
+    primary2: "hsl(180, 90%, 10%)",
+    primary3: "hsl(180, 90%, 24%)",
+    primary4: "hsl(180, 65%, 35%)",
+    primary5: "hsl(180, 60%, 43%)",
+    primary6: "hsl(180, 50%, 50%)",
+    primary7: "hsl(180, 60%, 61%)",
+    primary8: "hsl(180, 65%, 70%)",
+    primary9: "hsl(180, 80%, 82%)",
+    red1: "#E29578",
+    red2: "#E29578",
+    red3: "#E29578",
+    red4: "#E29578",
+    red5: "#E29578",
+    yellow1: "#FFDDD2",
+    yellow2: "#FFDDD2",
+    yellow3: "#FFDDD2",
+    yellow4: "#FFDDD2",
+    yellow5: "#FFDDD2",
+    gray1: "#444",
+    gray2: "#999",
   },
-
-  // colors: {
-  //   primary: "#2F4858",
-  //   secondary: "#33658A",
-  //   highlight: "#55DDE0",
-  //   warning: "#F6AE2D",
-  //   danger: "#F26419",
-  // },
-
-  // colors: {
-  //   primary: "#6B705C",
-  //   secondary: "#A5A58D",
-  //   highlight: "#FFE8D6",
-  //   warning: "#DDBEA9",
-  //   danger: "#CB997E",
-  // },
-
-  // colors: {
-  //   primary: "#7D4F50",
-  //   secondary: "#CC8B86",
-  //   highlight: "#F9EAE1",
-  //   warning: "#D1BE9C",
-  //   danger: "#AA998F",
-  // },
-
-  // colors: {
-  //   primary: "#4B4453",
-  //   secondary: "#845EC2",
-  //   highlight: "#B0A8B9",
-  //   warning: "#FF8066",
-  //   danger: "#C34A36",
-  // },
-
-  // colors: {
-  //   primary: "#264653",
-  //   secondary: "#2A9D8F",
-  //   highlight: "#E9C46A",
-  //   warning: "#F4A261",
-  //   danger: "#E76F51",
-  // },
 });

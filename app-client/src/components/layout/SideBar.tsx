@@ -11,7 +11,7 @@ import SideBarItem from "./SideBarItem";
 const SideBar = () => {
   return (
     <VStack
-      bg="primary"
+      bg="primary2"
       p={3}
       spacing={5}
       fontWeight={"400"}
@@ -25,30 +25,33 @@ const SideBar = () => {
         <FaCalendarDay />
       </SideBarItem>
       <Divider mt={-5}></Divider>
-      <SideBarItem text={"Task"}>
+      <SideBarItem text={"task"}>
         <GrTasks />
       </SideBarItem>
       {/* <Divider mt={-5}></Divider> */}
-      <SideBarItem text={"Todo"}>
+      <SideBarItem text={"todo"}>
         <MdFactCheck />
       </SideBarItem>
       {/* <Divider mt={-5}></Divider> */}
-      <SideBarItem text={"Habit"}>
+      <SideBarItem text={"habit"}>
         <BsUiChecksGrid />
       </SideBarItem>
       {/* <Divider mt={-5}></Divider> */}
-      <SideBarItem text={"Event"}>
+      <SideBarItem text={"event"}>
         <IoBookmarks />
       </SideBarItem>
       {/* <Divider mt={-5}></Divider> */}
-      <SideBarItem text={"Expence"}>
+      <SideBarItem text={"expence"}>
         <HiMiniShoppingBag />
       </SideBarItem>
       <Divider mt={-5}></Divider>
-      <SideBarItem text={"Dashboard"}>
+      <SideBarItem text={"dashboard"}>
         <MdDashboard />
       </SideBarItem>
       <Divider mt={-5}></Divider>
+      <SideBarItem text={"colors"}>
+        <MdDashboard />
+      </SideBarItem>
     </VStack>
   );
 };
