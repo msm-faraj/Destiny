@@ -1,10 +1,23 @@
-import React from "react";
-import { TodoForm } from "../common/TodoForm";
+import { background } from "@chakra-ui/react";
+import { TodoForm } from "./TodoForm";
+import { TodoTable } from "./TodoTable";
 
-const Todo = () => {
+interface Props {
+  fontColor: string;
+  backgroundColor: string;
+}
+
+const Todo = ({ fontColor, backgroundColor }: Props) => {
   return (
     <>
-      <TodoForm></TodoForm>
+      <TodoForm
+        fontColor={fontColor}
+        backgroundColor={backgroundColor}
+      ></TodoForm>
+      <TodoTable
+        fontColor={fontColor}
+        backgroundColor={backgroundColor}
+      ></TodoTable>
     </>
   );
 };

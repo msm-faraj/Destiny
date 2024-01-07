@@ -1,13 +1,16 @@
 import { HStack, Text } from "@chakra-ui/react";
-import React from "react";
-
-const Footer = () => {
+interface Props {
+  backgrounColor: string;
+  fontColor: string;
+  borderRadius: number;
+}
+const Footer = ({ fontColor, backgrounColor, borderRadius }: Props) => {
   return (
     <HStack
       h={"full"}
-      bg="primary"
-      color={"lightgry"}
-      borderRadius={10}
+      bg={backgrounColor}
+      color={fontColor}
+      borderRadius={borderRadius}
       fontWeight={"400"}
       fontSize={"xx-large"}
       display={"flex"}

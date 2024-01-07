@@ -8,47 +8,56 @@ import { MdDashboard } from "react-icons/md";
 import { FaCalendarDay } from "react-icons/fa6";
 import SideBarItem from "./SideBarItem";
 
-const SideBar = () => {
+interface Props {
+  backgrounColor: string;
+  fontColor: string;
+  borderRadius: number;
+}
+
+const SideBar = ({ backgrounColor, fontColor, borderRadius }: Props) => {
   return (
     <VStack
-      bg="primary"
+      bg={backgrounColor}
       p={3}
       spacing={5}
       fontWeight={"400"}
       fontSize={"0.8rem"}
       h={"full"}
-      borderRadius={10}
+      borderRadius={borderRadius}
       justifyContent={"flex-start"}
       alignItems={"start"}
     >
-      <SideBarItem text={"Daily"}>
+      <SideBarItem fontColor={fontColor} text={"Daily"}>
         <FaCalendarDay />
       </SideBarItem>
       <Divider mt={-5}></Divider>
-      <SideBarItem text={"Task"}>
+      <SideBarItem fontColor={fontColor} text={"task"}>
         <GrTasks />
       </SideBarItem>
       {/* <Divider mt={-5}></Divider> */}
-      <SideBarItem text={"Todo"}>
+      <SideBarItem fontColor={fontColor} text={"todo"}>
         <MdFactCheck />
       </SideBarItem>
       {/* <Divider mt={-5}></Divider> */}
-      <SideBarItem text={"Habit"}>
+      <SideBarItem fontColor={fontColor} text={"habit"}>
         <BsUiChecksGrid />
       </SideBarItem>
       {/* <Divider mt={-5}></Divider> */}
-      <SideBarItem text={"Event"}>
+      <SideBarItem fontColor={fontColor} text={"event"}>
         <IoBookmarks />
       </SideBarItem>
       {/* <Divider mt={-5}></Divider> */}
-      <SideBarItem text={"Expence"}>
+      <SideBarItem fontColor={fontColor} text={"expence"}>
         <HiMiniShoppingBag />
       </SideBarItem>
       <Divider mt={-5}></Divider>
-      <SideBarItem text={"Dashboard"}>
+      <SideBarItem fontColor={fontColor} text={"dashboard"}>
         <MdDashboard />
       </SideBarItem>
       <Divider mt={-5}></Divider>
+      <SideBarItem fontColor={fontColor} text={"colors"}>
+        <MdDashboard />
+      </SideBarItem>
     </VStack>
   );
 };

@@ -28,12 +28,12 @@ import { ChevronDownIcon } from "@chakra-ui/icons";
 const Daily = () => {
   return (
     <>
-      <Flex direction={"column"} bg={"lightgry"} gap={2}>
-        <Box bg={"secondary"} borderRadius={5}>
+      <Flex direction={"column"} bg={"cyan3"} gap={2}>
+        <Box bg={"cyan2"} borderRadius={5}>
           <Text>Input</Text>
           <Input></Input>
         </Box>
-        <Box bg={"secondary"} borderRadius={5}>
+        <Box bg={"cyan2"} borderRadius={5}>
           <Text>Table</Text>
           <TableContainer>
             <Table size="sm">
@@ -71,7 +71,7 @@ const Daily = () => {
             </Table>
           </TableContainer>
         </Box>
-        <Box bg={"secondary"} borderRadius={5}>
+        <Box bg={"cyan2"} borderRadius={5}>
           <Text>Fitted Tab</Text>
           <Tabs position="relative" variant="unstyled">
             <TabList>
@@ -98,7 +98,7 @@ const Daily = () => {
             </TabPanels>
           </Tabs>
         </Box>
-        <Box bg={"secondary"} borderRadius={5}>
+        <Box bg={"cyan2"} borderRadius={5}>
           <Text>Menu</Text>
           <Menu>
             <MenuButton
@@ -122,10 +122,10 @@ const Daily = () => {
             </MenuList>
           </Menu>
         </Box>
-        <Box bg={"secondary"} borderRadius={5}>
+        <Box bg={"cyan2"} borderRadius={5}>
           <Text>Drawer</Text>
         </Box>
-        <Box bg={"secondary"} borderRadius={5}>
+        <Box bg={"cyan2"} borderRadius={5}>
           <Text>Daily</Text>
         </Box>
       </Flex>
