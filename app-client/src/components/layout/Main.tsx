@@ -8,7 +8,7 @@ interface Props {
 const Main = ({ children }: Props) => {
   return (
     <Grid
-      bg="primary3"
+      bg="yellow50"
       h={"full"}
       color={"gray1"}
       fontWeight={"bold"}

@@ -8,48 +8,54 @@ import { MdDashboard } from "react-icons/md";
 import { FaCalendarDay } from "react-icons/fa6";
 import SideBarItem from "./SideBarItem";
 
-const SideBar = () => {
+interface Props {
+  backgrounColor: string;
+  fontColor: string;
+  borderRadius: number;
+}
+
+const SideBar = ({ backgrounColor, fontColor, borderRadius }: Props) => {
   return (
     <VStack
-      bg="primary2"
+      bg={backgrounColor}
       p={3}
       spacing={5}
       fontWeight={"400"}
       fontSize={"0.8rem"}
       h={"full"}
-      borderRadius={10}
+      borderRadius={borderRadius}
       justifyContent={"flex-start"}
       alignItems={"start"}
     >
-      <SideBarItem text={"Daily"}>
+      <SideBarItem fontColor={fontColor} text={"Daily"}>
         <FaCalendarDay />
       </SideBarItem>
       <Divider mt={-5}></Divider>
-      <SideBarItem text={"task"}>
+      <SideBarItem fontColor={fontColor} text={"task"}>
         <GrTasks />
       </SideBarItem>
       {/* <Divider mt={-5}></Divider> */}
-      <SideBarItem text={"todo"}>
+      <SideBarItem fontColor={fontColor} text={"todo"}>
         <MdFactCheck />
       </SideBarItem>
       {/* <Divider mt={-5}></Divider> */}
-      <SideBarItem text={"habit"}>
+      <SideBarItem fontColor={fontColor} text={"habit"}>
         <BsUiChecksGrid />
       </SideBarItem>
       {/* <Divider mt={-5}></Divider> */}
-      <SideBarItem text={"event"}>
+      <SideBarItem fontColor={fontColor} text={"event"}>
         <IoBookmarks />
       </SideBarItem>
       {/* <Divider mt={-5}></Divider> */}
-      <SideBarItem text={"expence"}>
+      <SideBarItem fontColor={fontColor} text={"expence"}>
         <HiMiniShoppingBag />
       </SideBarItem>
       <Divider mt={-5}></Divider>
-      <SideBarItem text={"dashboard"}>
+      <SideBarItem fontColor={fontColor} text={"dashboard"}>
         <MdDashboard />
       </SideBarItem>
       <Divider mt={-5}></Divider>
-      <SideBarItem text={"colors"}>
+      <SideBarItem fontColor={fontColor} text={"colors"}>
         <MdDashboard />
       </SideBarItem>
     </VStack>

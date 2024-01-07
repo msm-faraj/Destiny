@@ -1,36 +1,41 @@
-import { Box, HStack, Text } from "@chakra-ui/react";
-import { SiAlwaysdata } from "react-icons/si";
-import { Logo } from "../../assets/Logo";
-const TopBar = () => {
-  const color = "#ddd";
-  return (
-    <HStack
-      p={0}
-      pl={5}
-      pr={5}
-      h="full"
-      w="full"
-      bg="primary1"
-      borderRadius={5}
-      display={"flex"}
-      justifyContent={"space-between"}
-      alignItems={"center"}
-    >
-      <HStack align={"center"} h={"full"} borderRadius={5}>
-        {/* <Box h={"full"} display={"flex"} alignItems={"flex-end"} bg={"primary3"}>
-          <SiAlwaysdata color={color} fontSize={30} />
-        </Box> */}
-        <Box>
-          <Logo size={60} color={color}></Logo>
-        </Box>
-      </HStack>
+import { Box, FormControl, HStack, Text } from "@chakra-ui/react";
+import { GiDesertSkull } from "react-icons/gi";
 
-      <HStack align={"center"} h={"full"} color={color}>
-        <Text fontWeight={"400"} fontSize={"xx-large"}>
-          Destiny
-        </Text>
+import { Logo } from "../../assets/Logo";
+
+interface Props {
+  backgrounColor: string;
+  fontColor: string;
+  borderRadius: number;
+}
+
+const TopBar = ({ backgrounColor, fontColor, borderRadius }: Props) => {
+  return (
+    <>
+      <HStack
+        bg={backgrounColor}
+        pl={5}
+        pr={5}
+        h="full"
+        w="full"
+        borderRadius={borderRadius}
+        display={"flex"}
+        justifyContent={"space-between"}
+        alignItems={"center"}
+      >
+        <HStack align={"center"} h={"full"} borderRadius={5} color={fontColor}>
+          <Box>
+            <GiDesertSkull color={fontColor} fontSize={50} />
+          </Box>
+        </HStack>
+
+        <HStack align={"center"} h={"full"} color={fontColor}>
+          <Text fontWeight={"400"} fontSize={"xx-large"}>
+            Destiny
+          </Text>
+        </HStack>
       </HStack>
-    </HStack>
+    </>
   );
 };
 

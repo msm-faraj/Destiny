@@ -5,13 +5,14 @@ import { Link } from "react-router-dom";
 interface Props {
   children: ReactNode;
   text: string;
+  fontColor: string;
 }
 
-const SideBarItem = ({ children, text }: Props) => {
+const SideBarItem = ({ children, text, fontColor }: Props) => {
   return (
     <Flex w={"full"} gap={1}>
       <Link to={text}>
-        <Box display="flex" flexDirection={"row"} color={"primary1"} gap={1}>
+        <Box display="flex" flexDirection={"row"} color={fontColor} gap={1}>
           <Icon h={6} w={6} fontSize={20}>
             {children}
           </Icon>

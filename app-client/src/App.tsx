@@ -2,7 +2,6 @@ import { GridItem, Show } from "@chakra-ui/react";
 import SideBar from "./components/layout/SideBar";
 import TopBar from "./components/layout/TopBar";
 import LayOut from "./components/layout/LayOut";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Daily from "./components/daily/Daily";
 import Todo from "./components/todo/Todo";
 import Task from "./components/task/Task";
@@ -12,21 +11,31 @@ import Expence from "./components/expence/Expence";
 import Dashboard from "./components/dashboard/Dashboard";
 import Footer from "./components/layout/Footer";
 import Main from "./components/layout/Main";
-import { ColorPalette } from "./components/Theme/ColorPalette";
+import { ColorPalette } from "./components/colors/ColorPalette";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {
+  const fontColor = "red.800";
+  const backgroundColor = "red.100";
+  const borderRadius = 2;
   return (
     <BrowserRouter>
       <LayOut>
         <GridItem area="header">
-          <TopBar></TopBar>
+          <TopBar
+            fontColor={fontColor}
+            backgrounColor={backgroundColor}
+            borderRadius={borderRadius}
+          ></TopBar>
         </GridItem>
 
-        <Show above="sm">
-          <GridItem area="aside">
-            <SideBar></SideBar>
-          </GridItem>
-        </Show>
+        <GridItem area="aside">
+          <SideBar
+            fontColor={fontColor}
+            backgrounColor={backgroundColor}
+            borderRadius={borderRadius}
+          ></SideBar>
+        </GridItem>
 
         <GridItem area="main">
           <Main>
@@ -44,7 +53,11 @@ function App() {
         </GridItem>
 
         <GridItem area="footer">
-          <Footer></Footer>
+          <Footer
+            backgrounColor={backgroundColor}
+            fontColor={fontColor}
+            borderRadius={borderRadius}
+          ></Footer>
         </GridItem>
       </LayOut>
     </BrowserRouter>

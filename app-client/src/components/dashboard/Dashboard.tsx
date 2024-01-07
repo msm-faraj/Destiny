@@ -13,13 +13,13 @@ const Dashboard = () => {
       color="blackAlpha.700"
       fontWeight="bold"
     >
-      <GridItem pl="2" bg="primary2" area={"task"}>
+      <GridItem pl="2" bg="cyan2" area={"task"}>
         Task
       </GridItem>
       <GridItem pl="2" bg="red1" area={"todo"}>
         Todo
       </GridItem>
-      <GridItem pl="2" bg="primary1" area={"habit"}>
+      <GridItem pl="2" bg="cyan1" area={"habit"}>
         Habit
       </GridItem>
       <GridItem pl="2" bg="gray2" area={"footer"}>
