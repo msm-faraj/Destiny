@@ -15,8 +15,8 @@ import { ColorPalette } from "./components/colors/ColorPalette";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {
-  const fontColor = "red.800";
-  const backgroundColor = "red.100";
+  const fontColor = "yellow.800";
+  const backgroundColor = "yellow.300";
   const borderRadius = 2;
   return (
     <BrowserRouter>
@@ -41,7 +41,15 @@ function App() {
           <Main>
             <Routes>
               <Route path="/daily" element={<Daily />} />
-              <Route path="/todo" element={<Todo />} />
+              <Route
+                path="/todo"
+                element={
+                  <Todo
+                    fontColor={fontColor}
+                    backgroundColor={backgroundColor}
+                  />
+                }
+              />
               <Route path="/task" element={<Task />} />
               <Route path="/habit" element={<Habit />} />
               <Route path="/event" element={<Event />} />
