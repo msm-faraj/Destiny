@@ -31,19 +31,19 @@ const SideBar = ({ backgrounColor, fontColor, borderRadius }: Props) => {
         <FaCalendarDay />
       </SideBarItem>
       <Divider mt={-5}></Divider>
-      <SideBarItem fontColor={fontColor} text={"task"}>
+      <SideBarItem fontColor={fontColor} text={"Task"}>
         <GrTasks />
       </SideBarItem>
       {/* <Divider mt={-5}></Divider> */}
-      <SideBarItem fontColor={fontColor} text={"todo"}>
+      <SideBarItem fontColor={fontColor} text={"Todo"}>
         <MdFactCheck />
       </SideBarItem>
       {/* <Divider mt={-5}></Divider> */}
-      <SideBarItem fontColor={fontColor} text={"habit"}>
+      <SideBarItem fontColor={fontColor} text={"Habit"}>
         <BsUiChecksGrid />
       </SideBarItem>
       {/* <Divider mt={-5}></Divider> */}
-      <SideBarItem fontColor={fontColor} text={"event"}>
+      <SideBarItem fontColor={fontColor} text={"Event"}>
         <IoBookmarks />
       </SideBarItem>
       {/* <Divider mt={-5}></Divider> */}
