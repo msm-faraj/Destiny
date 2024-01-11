@@ -1,18 +1,12 @@
-// const sequelize = require("../src/db/sequelize");
 
-// const Expense = require("../src/db/models/expense");
-// const Todo = require("../src/db/models/todo");
+const express = require("express")
+const app = express()
+const port = 4040
 
-// sequelize
-//   .sync()
-//   .then((result) => {
-//     // return Todo.create({ todoName: "first test" });
-// console.log(result);
-// })
-// .then((todo) => {
-//   console.log("first todo creted: ", todo);
-// })
-// .catch((err) => {
-//   console.error(err);
-// });
-console.log("this is ok and workd done");
+app.get("/", (req, res) => {
+	res.send("Hello Destiny")
+})
+
+app.listen(port, () => {
+	console.log(`Destiny server is listening on port ${port}`)
+})
