@@ -2,7 +2,7 @@ const express = require("express");
 const app = express();
 const port = 4040;
 const cors = require("cors");
-const { Sequelize } = require("sequelize");
+const sequelize = require("../src/db/dbConnection");
 
 // ***
 app.use(express.json());
@@ -11,12 +11,6 @@ app.use(cors());
 // ***
 app.get("/", (req, res) => {
   res.send("Hello Destiny");
-});
-
-//** connect to da db
-const sequelize = new Sequelize("destiny_db", "destiny-user", "destiny-pass", {
-  host: "destiny-postgres-cnt", //**
-  dialect: "postgres",
 });
 
 // ** test connection
