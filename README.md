@@ -9,7 +9,7 @@
 
 # After run...
 
-1.client going to work in localhost 3000
+1.client going to work in localhost 5173
 2.server going to work in localhost 4000
 3.postgres going to service on
 [] - localhost on port 5000 &
@@ -21,4 +21,4 @@
 [] - app-client-cnt /
 [] - app-server-cnt /
 [] - app-postgres-cnt /
-3.data going to be saved in "destiny_postgres_db" volume
+3.data going to be saved in "destiny_db" volume
