@@ -1,6 +1,7 @@
 services:
   postgres_db:
     image: postgres:16.1
+    restart: always
     container_name: destiny-postgres-cnt
     environment:
       POSTGRES_PASSWORD: destiny-pass
@@ -9,7 +10,7 @@ services:
     ports:
       - 5432:5432
     volumes:
-      - postgres_db:/var/lib/postgresql/data
+      - data_pg:/var/lib/postgresql/data
     networks:
       - destiny-net
 
@@ -17,7 +18,7 @@ services:
     build: ./app-server
     container_name: destiny-server-cnt
     ports:
-      - 4000:4000
+      - 4040:4040
     volumes:
       # - /home/msm-faraj/Code/Public/Destiny/app-server/src:/app-server/src
       - ./app-server/src:/app-server/src
@@ -25,20 +26,21 @@ services:
     networks:
       - destiny-net
 
-  client:
-    build: ./app-client
-    container_name: destiny-client-cnt
-    ports:
-      - 3000:3000
-    volumes:
-      # - /home/msm-faraj/Code/Public/Destiny/app-client/src:/app-client/src
-      # - /home/msm-faraj/Code/Public/Destiny/app-client/public:/app-client/public
-      - ./app-client/src:/app-client/src
-      - ./app-client/public:/app-client/public
-    networks:
-      - destiny-net
+  # client:
+  #   build: ./app-client
+  #   container_name: destiny-client-cnt
+  #   ports:
+  #     - 5173:5173
+  #     - 3010:3010
+  #   volumes:
+  #     # - /home/msm-faraj/Code/Public/Destiny/app-client/src:/app-client/src
+  #     # - /home/msm-faraj/Code/Public/Destiny/app-client/public:/app-client/public
+  #     - ./app-client/src:/app-client/src
+  #     - ./app-client/public:/app-client/public
+  #   networks:
+  #     - destiny-net
 volumes:
-  postgres_db:
+  data_pg:
 
 networks:
   destiny-net:

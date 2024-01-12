@@ -1,0 +1,9 @@
+{
+  "development": {
+    "username": "destiny-user",
+    "password": "destiny-pass",
+    "database": "destiny_db",
+    "host": "localhost",
+    "dialect": "postgres"
+  }
+}
