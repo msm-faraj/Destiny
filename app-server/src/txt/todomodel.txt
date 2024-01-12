@@ -1,0 +1,28 @@
+const { Sequelize, DataTypes } = require("sequelize");
+// const mySequelize = require("../src/db/db");
+const sequelize = new Sequelize("sqlite::memory:");
+
+const Todo = sequelize.define("todo", {
+  todoId: {
+    type: DataTypes.INTEGER,
+    autoIncrement: true,
+    allowNull: false,
+    primaryKey: true,
+  },
+  todoName: {
+    type: DataTypes.STRING,
+    allowNull: false,
+  },
+  isDone: {
+    type: DataTypes.BOOLEAN,
+  },
+  isImportant: {
+    type: DataTypes.BOOLEAN,
+  },
+
+  deletedAt: {
+    type: DataTypes.DATE,
+  },
+});
+
+module.exports = Todo;
