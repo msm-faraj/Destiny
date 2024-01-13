@@ -1,18 +1,17 @@
-// const sequelize = require("./db/db");
 const appRoutes = require("./routes");
 const express = require("express");
 const cors = require("cors");
 const app = express();
 const port = 4040;
 
-// *** middleware
+// Middleware
 app.use(express.json());
 app.use(cors());
 
-// *** router
+// Router
 app.use("/", appRoutes);
 
-// *** create serever
+// Start the serever
 app.listen(port, () => {
-  console.log(`Destiny server is listening on port ${port}`);
+  console.log(`Destiny server has started on port ${port}`);
 });

@@ -13,7 +13,15 @@ export const TodoForm = ({ fontColor, backgroundColor }: Props) => {
 
   const handleSubmit = (event: FormEvent) => {
     event.preventDefault();
-    console.log(todo);
+    try {
+      fetch("http://localhost:4040/todos", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(todo),
+      });
+    } catch (error: any) {
+      console.error(error.message);
+    }
   };
 
   return (
@@ -24,7 +32,7 @@ export const TodoForm = ({ fontColor, backgroundColor }: Props) => {
           value={todo.name}
           id="name"
           type="text"
-          placeholder="name"
+          placeholder="new todo"
           size="md"
         />
         <Button
