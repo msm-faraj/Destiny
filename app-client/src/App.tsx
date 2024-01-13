@@ -15,9 +15,10 @@ import { ColorPalette } from "./components/colors/ColorPalette";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {
-  const fontColor = "yellow.800";
-  const backgroundColor = "yellow.300";
+  const fontColor = "blue.900";
+  const backgroundColor = "#Add8e6";
   const borderRadius = 2;
+  const todoWidth = 400;
   return (
     <BrowserRouter>
       <LayOut>
@@ -47,6 +48,7 @@ function App() {
                   <Todo
                     fontColor={fontColor}
                     backgroundColor={backgroundColor}
+                    width={todoWidth}
                   />
                 }
               />

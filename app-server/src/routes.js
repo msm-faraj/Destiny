@@ -3,17 +3,32 @@ const todoTable = require("../models").todo;
 
 const router = express.Router();
 
-router.get("/addtodo", (req, res) => {
-  todoTable.create({
-    todoName: "first todo",
-  });
+//Creae new todo
+router.post("/todos", async (req, res) => {
+  try {
+    const { name } = req.body;
+    const newTodo = await todoTable.create({
+      todoName: name,
+    });
+    res.json({
+      status: 200,
+      newTodo,
+    });
+  } catch (error) {
+    console.error(error.message);
+  }
 });
 
-router.get("/", (req, res) => {
-  res.json({
-    status: true,
-    message: "Hello World!",
-  });
+//Get all todos
+router.get("/todos", async (req, res) => {
+  try {
+    const allTodos = await todoTable.findAll({
+      order: [["id", "DESC"]],
+    });
+    res.json(allTodos);
+  } catch (error) {
+    console.error(error.message);
+  }
 });
 
 module.exports = router;
