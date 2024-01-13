@@ -22,7 +22,9 @@ router.post("/todos", async (req, res) => {
 //Get all todos
 router.get("/todos", async (req, res) => {
   try {
-    const allTodos = await todoTable.findAll();
+    const allTodos = await todoTable.findAll({
+      order: [["id", "DESC"]],
+    });
     res.json(allTodos);
   } catch (error) {
     console.error(error.message);

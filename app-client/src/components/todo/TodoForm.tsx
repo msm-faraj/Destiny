@@ -4,17 +4,18 @@ import { FormEvent, useState } from "react";
 interface Props {
   fontColor: string;
   backgroundColor: string;
+  width: number;
 }
 
-export const TodoForm = ({ fontColor, backgroundColor }: Props) => {
+export const TodoForm = ({ fontColor, backgroundColor, width }: Props) => {
   const [todo, setTodo] = useState({
     name: "",
   });
 
-  const handleSubmit = (event: FormEvent) => {
+  const handleSubmit = async (event: FormEvent) => {
     event.preventDefault();
     try {
-      fetch("http://localhost:4040/todos", {
+      await fetch("http://localhost:4040/todos", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(todo),
@@ -26,7 +27,7 @@ export const TodoForm = ({ fontColor, backgroundColor }: Props) => {
 
   return (
     <form onSubmit={handleSubmit}>
-      <Stack>
+      <Stack padding={2} width={width}>
         <Input
           onChange={(event) => setTodo({ ...todo, name: event.target.value })}
           value={todo.name}
