@@ -15,17 +15,17 @@ import { ColorPalette } from "./components/colors/ColorPalette";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {
-  const fontColor = "blue.900";
-  const backgroundColor = "#Add8e6";
-  const borderRadius = 2;
+  const fontColor = "gray.400"; //Teel 300 chakra
+  const backgroundColor = "gray.800"; //gray800
+  const borderRadius = 0;
   const todoWidth = 400;
   return (
     <BrowserRouter>
       <LayOut>
         <GridItem area="header">
           <TopBar
-            fontColor={fontColor}
-            backgrounColor={backgroundColor}
+            fontColor={backgroundColor}
+            backgrounColor={fontColor}
             borderRadius={borderRadius}
           ></TopBar>
         </GridItem>
@@ -64,8 +64,8 @@ function App() {
 
         <GridItem area="footer">
           <Footer
-            backgrounColor={backgroundColor}
-            fontColor={fontColor}
+            backgrounColor={fontColor}
+            fontColor={backgroundColor}
             borderRadius={borderRadius}
           ></Footer>
         </GridItem>
