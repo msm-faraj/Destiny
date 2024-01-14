@@ -8,13 +8,13 @@ interface Props {
 const Main = ({ children }: Props) => {
   return (
     <Grid
-      bg="yellow50"
+      bg="gray.100"
       h={"full"}
       color={"gray1"}
       fontWeight={"bold"}
       fontSize={"large"}
       p={5}
-      borderRadius={10}
+      borderRadius={0}
     >
       {children}
     </Grid>

@@ -41,7 +41,7 @@ export const TodoForm = ({ fontColor, backgroundColor, width }: Props) => {
           size="md"
           color={fontColor}
           colorScheme={fontColor}
-          bg={backgroundColor}
+          bg={"gray.700"}
         >
           Create New Todo
         </Button>
