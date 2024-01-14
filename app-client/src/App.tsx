@@ -10,7 +10,7 @@ import Event from "./components/Event/Event";
 import Expence from "./components/expence/Expence";
 import Dashboard from "./components/dashboard/Dashboard";
 import Footer from "./components/layout/Footer";
-import Main from "./components/layout/Main";
+import Main from "./components/layout/MainArea";
 import { ColorPalette } from "./components/colors/ColorPalette";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 

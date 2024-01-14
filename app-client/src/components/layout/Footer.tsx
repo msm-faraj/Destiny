@@ -12,7 +12,7 @@ const Footer = ({ fontColor, backgrounColor, borderRadius }: Props) => {
       color={fontColor}
       borderRadius={borderRadius}
       fontWeight={"400"}
-      fontSize={"xx-large"}
+      fontSize={"large"}
       display={"flex"}
       alignItems={"center"}
       justifyContent={"center"}
