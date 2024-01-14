@@ -14,7 +14,7 @@ const LayOut = ({ children }: Props) => {
         "aside footer"  
         `,
       }}
-      gridTemplateRows={"25px 7fr 2fr"}
+      gridTemplateRows={"28px 7fr 2fr"}
       gridTemplateColumns={"1fr 10fr"}
     >
       {children}

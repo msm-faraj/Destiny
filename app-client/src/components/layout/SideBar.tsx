@@ -27,7 +27,7 @@ const SideBar = ({ backgrounColor, fontColor, borderRadius }: Props) => {
       h={"full"}
       borderRadius={borderRadius}
     >
-      <VStack
+      {/* <VStack
         width={"full"}
         align={"center"}
         color={"gray.200"}
@@ -35,11 +35,9 @@ const SideBar = ({ backgrounColor, fontColor, borderRadius }: Props) => {
         borderRadius={50}
         p={1.5}
       >
-        <Box>
-          <GiDesertSkull fontSize={60} />
-        </Box>
-      </VStack>
-      <Divider></Divider>
+        <Box><GiDesertSkull fontSize={60} /></Box>
+      </VStack> */}
+      {/* <Divider></Divider> */}
       <SideBarItem fontColor={fontColor} text={"Daily"}>
         <FaCalendarDay />
       </SideBarItem>
