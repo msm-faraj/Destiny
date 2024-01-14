@@ -9,12 +9,12 @@ const LayOut = ({ children }: Props) => {
     <Grid
       templateAreas={{
         base: `
-        "aside header"
+        "header header"
         "aside main"
         "aside footer"  
         `,
       }}
-      gridTemplateRows={"60px 7fr 2fr"}
+      gridTemplateRows={"25px 7fr 2fr"}
       gridTemplateColumns={"1fr 10fr"}
     >
       {children}

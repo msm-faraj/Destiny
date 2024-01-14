@@ -21,7 +21,7 @@ const TopBar = ({ backgrounColor, fontColor, borderRadius }: Props) => {
         alignItems={"center"}
       >
         <HStack align={"center"} h={"full"} color={fontColor}>
-          <Text fontWeight={"400"} fontSize={"xx-large"}>
+          <Text fontWeight={"400"} fontSize={"large"}>
             Destiny
           </Text>
         </HStack>
