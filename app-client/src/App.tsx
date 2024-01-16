@@ -15,8 +15,8 @@ import { ColorPalette } from "./components/colors/ColorPalette";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {
-  const fontColor = "gray.400"; //Teel 300 chakra
-  const backgroundColor = "gray.800"; //gray800
+  const fontColor = "gray.400";
+  const backgroundColor = "gray.700";
   const borderRadius = 0;
   const todoWidth = 400;
   return (

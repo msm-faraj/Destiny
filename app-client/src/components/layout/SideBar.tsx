@@ -19,6 +19,9 @@ interface Props {
 const SideBar = ({ backgrounColor, fontColor, borderRadius }: Props) => {
   return (
     <VStack
+      display={"flex"}
+      justifyContent={"flex-start"}
+      alignItems={"flex-start"}
       bg={backgrounColor}
       p={3}
       spacing={5}
@@ -27,17 +30,6 @@ const SideBar = ({ backgrounColor, fontColor, borderRadius }: Props) => {
       h={"full"}
       borderRadius={borderRadius}
     >
-      {/* <VStack
-        width={"full"}
-        align={"center"}
-        color={"gray.200"}
-        justifyContent={"center"}
-        borderRadius={50}
-        p={1.5}
-      >
-        <Box><GiDesertSkull fontSize={60} /></Box>
-      </VStack> */}
-      {/* <Divider></Divider> */}
       <SideBarItem fontColor={fontColor} text={"Daily"}>
         <FaCalendarDay />
       </SideBarItem>

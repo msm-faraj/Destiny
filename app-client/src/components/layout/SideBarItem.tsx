@@ -1,6 +1,6 @@
 import { ReactNode } from "react";
 import { Link } from "react-router-dom";
-import { Box, Text, Flex, Icon } from "@chakra-ui/react";
+import { Box, Text, Flex, Icon, HStack, Center } from "@chakra-ui/react";
 
 interface Props {
   children: ReactNode;
@@ -10,18 +10,20 @@ interface Props {
 
 const SideBarItem = ({ children, text, fontColor }: Props) => {
   return (
-    <Flex w={"full"} gap={1}>
-      <Link to={text}>
-        <Box display="flex" flexDirection={"row"} color={fontColor} gap={1}>
-          <Icon h={6} w={6} fontSize={11}>
+    <Link to={text}>
+      <HStack>
+        <Box>
+          <Icon fontSize={23} color={fontColor}>
             {children}
           </Icon>
-          <Text fontSize={10} fontWeight={"400"}>
+        </Box>
+        <Box alignContent={"left"}>
+          <Text fontWeight={"400"} color={fontColor}>
             {text}
           </Text>
         </Box>
-      </Link>
-    </Flex>
+      </HStack>
+    </Link>
   );
 };
 
