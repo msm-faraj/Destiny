@@ -17,6 +17,7 @@ import {
   Button,
 } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
+import { TodoForm } from "./TodoForm";
 interface Props {
   fontColor: string;
   backgroundColor: string;
@@ -26,7 +27,7 @@ interface Props {
 export const TodoTable = ({ fontColor, backgroundColor, width }: Props) => {
   const [todos, setTodos] = useState([]);
 
-  //delte todo function
+  //Delete todo function
   const deleteTodo = async (id: any) => {
     try {
       const deleteTodo = await fetch(`http://localhost:4040/todos/${id}`, {
@@ -39,6 +40,7 @@ export const TodoTable = ({ fontColor, backgroundColor, width }: Props) => {
     }
   };
 
+  //Get all todos
   const getTodos = async () => {
     try {
       const response = await fetch("http://localhost:4040/todos");
@@ -51,7 +53,8 @@ export const TodoTable = ({ fontColor, backgroundColor, width }: Props) => {
 
   useEffect(() => {
     getTodos();
-  }, []);
+  }, [todos]);
+
   return (
     <TableContainer padding={2} width={width}>
       <Table size="sm" color={fontColor} bg={backgroundColor} borderRadius={5}>

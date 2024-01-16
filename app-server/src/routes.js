@@ -31,4 +31,29 @@ router.get("/todos", async (req, res) => {
   }
 });
 
+//Get a todo
+router.get("/todos/:id", async (req, res) => {
+  try {
+    const { id } = req.params;
+    const todo = await todoTable.findOne({ where: { id: id } });
+    res.json(todo);
+  } catch (error) {
+    console.error(error.message);
+  }
+});
+
+//Update a todo
+
+//Delete a todo
+router.delete("/todos/:id", async (req, res) => {
+  try {
+    const { id } = req.params;
+    const deletedTodo = await todoTable.destroy({ where: { id: id } });
+    res.json(deletedTodo);
+    console.log("deleted");
+  } catch (error) {
+    console.error(error.message);
+  }
+});
+
 module.exports = router;
