@@ -13,10 +13,12 @@ import Footer from "./components/layout/Footer";
 import Main from "./components/layout/MainArea";
 import { ColorPalette } from "./components/colors/ColorPalette";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import "./App.css";
 
 function App() {
   const fontColor = "gray.400";
   const backgroundColor = "gray.700";
+  const lightBackground = "gray.100";
   const borderRadius = 0;
   const todoWidth = 400;
   return (
@@ -39,7 +41,7 @@ function App() {
         </GridItem>
 
         <GridItem area="main">
-          <Main>
+          <Main backgroundColor={lightBackground}>
             <Routes>
               <Route path="/daily" element={<Daily />} />
               <Route
@@ -62,7 +64,7 @@ function App() {
           </Main>
         </GridItem>
 
-        <GridItem area="footer">
+        <GridItem display={"block"} area="footer">
           <Footer
             backgrounColor={fontColor}
             fontColor={backgroundColor}

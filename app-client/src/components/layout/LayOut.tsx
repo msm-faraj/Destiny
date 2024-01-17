@@ -7,14 +7,15 @@ interface Props {
 const LayOut = ({ children }: Props) => {
   return (
     <Grid
+      min-height={"100vh"}
       templateAreas={{
         base: `
         "header header"
         "aside main"
-        "aside footer"  
+        "footer footer"  
         `,
       }}
-      gridTemplateRows={"28px 7fr 2fr"}
+      gridTemplateRows={"28px 7fr 1fr"}
       gridTemplateColumns={"1fr 10fr"}
     >
       {children}
