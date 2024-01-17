@@ -3,12 +3,14 @@ import { ReactNode } from "react";
 
 interface Props {
   children: ReactNode;
+  backgroundColor: string;
 }
 
-const Main = ({ children }: Props) => {
+const Main = ({ children, backgroundColor }: Props) => {
   return (
     <Grid
-      bg="gray.100"
+      overflow={"scroll"}
+      bg={backgroundColor}
       h={"full"}
       color={"gray1"}
       fontWeight={"bold"}

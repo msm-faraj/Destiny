@@ -34,7 +34,6 @@ export const TodoTable = ({ fontColor, backgroundColor, width }: Props) => {
         method: "DELETE",
       });
       console.log(deleteTodo);
-      setTodos(todos.filter((todo) => todo.id !== id));
     } catch (error) {
       console.error(error);
     }
