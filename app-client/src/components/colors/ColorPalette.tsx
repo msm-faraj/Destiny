@@ -67,6 +67,18 @@ export const ColorPalette = () => {
         <Center bg={"gray.800"}>800</Center>
         <Center bg={"gray.900"}>900</Center>
       </Stack>
+      <Stack width={"16"} direction={"column"} gap={0}>
+        <Center bg={"orange.50"}>50</Center>
+        <Center bg={"orange.100"}>100</Center>
+        <Center bg={"orange.200"}>200</Center>
+        <Center bg={"orange.300"}>300</Center>
+        <Center bg={"orange.400"}>400</Center>
+        <Center bg={"orange.500"}>500</Center>
+        <Center bg={"orange.600"}>600</Center>
+        <Center bg={"orange.700"}>700</Center>
+        <Center bg={"orange.800"}>800</Center>
+        <Center bg={"orange.900"}>900</Center>
+      </Stack>
     </Stack>
   );
 };

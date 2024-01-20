@@ -1,3 +1,4 @@
+import { Box } from "@chakra-ui/react";
 import { TodoForm } from "./TodoForm";
 import { TodoTable } from "./TodoTable";
 
@@ -8,18 +9,24 @@ interface Props {
 }
 
 const Todo = ({ fontColor, backgroundColor, width }: Props) => {
+  const handleDeleteTodo = (todo: string) => {
+    console.log(todo);
+  };
+
   return (
     <>
-      <TodoForm
-        fontColor={fontColor}
-        backgroundColor={backgroundColor}
-        width={width}
-      ></TodoForm>
-      <TodoTable
-        fontColor={fontColor}
-        backgroundColor={backgroundColor}
-        width={width}
-      ></TodoTable>
+      <Box overflow={"scroll"}>
+        <TodoForm
+          fontColor={backgroundColor}
+          backgroundColor={fontColor}
+          width={width}
+        ></TodoForm>
+        <TodoTable
+          fontColor={fontColor}
+          backgroundColor={backgroundColor}
+          width={width}
+        ></TodoTable>
+      </Box>
     </>
   );
 };

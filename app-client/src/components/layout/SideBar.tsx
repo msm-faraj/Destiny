@@ -31,15 +31,15 @@ const SideBar = ({ backgrounColor, fontColor }: Props) => {
 
   return (
     <VStack
+      pt={2}
+      w={"full"}
+      h={"full"}
       display={"flex"}
       justifyContent={"flex-start"}
       alignItems={"flex-start"}
       bg={backgrounColor}
-      p={3}
-      pl={0}
-      pr={0}
       spacing={4}
-      h={"full"}
+      borderRadius={10}
     >
       {Object.keys(sideBarItems).map((key, index) => (
         <Link key={key} to={`/${key}`} onClick={() => setSelectedIndex(index)}>
@@ -48,8 +48,7 @@ const SideBar = ({ backgrounColor, fontColor }: Props) => {
             flexDirection={"row"}
             alignItems={"center"}
             gap={1}
-            width={100}
-            fontSize={14}
+            width={"12vw"}
             p={1}
             color={
               selectedIndex === index ? `${backgrounColor}` : `${fontColor}`

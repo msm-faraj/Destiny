@@ -1,32 +1,28 @@
-import { HStack, Image, Text } from "@chakra-ui/react";
-import logo from "../../assets/freepick.svg";
+import { HStack, Text } from "@chakra-ui/react";
+import { BiGitRepoForked } from "react-icons/bi";
 
 interface Props {
   backgrounColor: string;
   fontColor: string;
-  borderRadius: number;
 }
 
-const TopBar = ({ backgrounColor, fontColor, borderRadius }: Props) => {
+const TopBar = ({ backgrounColor, fontColor }: Props) => {
   return (
     <>
       <HStack
+        w={"full"}
+        h={"full"}
         bg={backgrounColor}
-        pl={1}
-        pr={3}
-        h="full"
-        w="full"
-        borderRadius={borderRadius}
+        color={fontColor}
+        pl={5}
+        pr={5}
         display={"flex"}
         justifyContent={"space-between"}
         alignItems={"center"}
+        borderRadius={10}
       >
-        <Image fill={"red"} boxSize={6} src={logo}></Image>
-        <HStack align={"center"} h={"full"} color={fontColor}>
-          <Text fontWeight={"400"} fontSize={"large"}>
-            Destiny
-          </Text>
-        </HStack>
+        <BiGitRepoForked />
+        <Text>Destiny</Text>
       </HStack>
     </>
   );

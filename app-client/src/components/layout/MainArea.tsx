@@ -1,23 +1,14 @@
-import { Grid } from "@chakra-ui/react";
+import { Grid, Stack } from "@chakra-ui/react";
 import { ReactNode } from "react";
 
 interface Props {
   children: ReactNode;
-  backgroundColor: string;
+  backgrounColor: string;
 }
 
-const Main = ({ children, backgroundColor }: Props) => {
+const Main = ({ children, backgrounColor }: Props) => {
   return (
-    <Grid
-      overflow={"scroll"}
-      bg={backgroundColor}
-      h={"full"}
-      color={"gray1"}
-      fontWeight={"bold"}
-      fontSize={"large"}
-      p={5}
-      borderRadius={0}
-    >
+    <Grid p={5} w={"full"} h={"full"} bg={backgrounColor} borderRadius={20}>
       {children}
     </Grid>
   );

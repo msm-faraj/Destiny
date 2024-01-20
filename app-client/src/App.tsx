@@ -3,7 +3,7 @@ import SideBar from "./components/layout/SideBar";
 import TopBar from "./components/layout/TopBar";
 import LayOut from "./components/layout/LayOut";
 import Daily from "./components/daily/Daily";
-import Todo from "./components/todo/Todo";
+import Todo from "./components/todo";
 import Task from "./components/task/Task";
 import Habit from "./components/Habit/Habit";
 import Event from "./components/Event/Event";
@@ -16,9 +16,8 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./App.css";
 
 function App() {
-  const fontColor = "gray.400";
-  const backgroundColor = "gray.700";
-  const lightBackground = "gray.100";
+  const fontColor = "red.900";
+  const backgroundColor = "red.100";
   const borderRadius = 0;
   const todoWidth = 400;
   return (
@@ -28,7 +27,6 @@ function App() {
           <TopBar
             fontColor={backgroundColor}
             backgrounColor={fontColor}
-            borderRadius={borderRadius}
           ></TopBar>
         </GridItem>
 
@@ -41,7 +39,7 @@ function App() {
         </GridItem>
 
         <GridItem area="main">
-          <Main backgroundColor={lightBackground}>
+          <Main backgrounColor={backgroundColor}>
             <Routes>
               <Route path="/daily" element={<Daily />} />
               <Route
@@ -68,7 +66,6 @@ function App() {
           <Footer
             backgrounColor={fontColor}
             fontColor={backgroundColor}
-            borderRadius={borderRadius}
           ></Footer>
         </GridItem>
       </LayOut>
