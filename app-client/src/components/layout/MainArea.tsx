@@ -3,12 +3,19 @@ import { ReactNode } from "react";
 
 interface Props {
   children: ReactNode;
-  backgrounColor: string;
+  bg: string;
 }
 
-const Main = ({ children, backgrounColor }: Props) => {
+const Main = ({ children, bg }: Props) => {
   return (
-    <Grid p={5} w={"full"} h={"full"} bg={backgrounColor} borderRadius={20}>
+    <Grid
+      p={5}
+      w={"full"}
+      h={"full"}
+      bg={bg}
+      borderRadius={20}
+      overflowY={"scroll"}
+    >
       {children}
     </Grid>
   );

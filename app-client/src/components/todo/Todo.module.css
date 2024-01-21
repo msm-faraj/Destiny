@@ -1,0 +1,9 @@
+.todoContainer {
+  background-color: wheat;
+  padding: 20px;
+  border-radius: 5pt;
+}
+
+.todo-border {
+  border: solid orange 2px;
+}

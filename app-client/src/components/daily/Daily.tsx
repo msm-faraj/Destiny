@@ -28,14 +28,14 @@ import { ChevronDownIcon } from "@chakra-ui/icons";
 const Daily = () => {
   return (
     <>
-      <Flex direction={"column"} bg={"cyan3"} gap={2}>
+      <Flex direction={"column"} gap={2}>
         <Box bg={"cyan2"} borderRadius={5}>
           <Text>Input</Text>
           <Input></Input>
         </Box>
-        <Box bg={"cyan2"} borderRadius={5}>
+        <Box borderRadius={5}>
           <Text>Table</Text>
-          <TableContainer>
+          <TableContainer color={"#8B4600"}>
             <Table size="sm">
               <Thead>
                 <Tr>

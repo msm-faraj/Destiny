@@ -16,8 +16,8 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./App.css";
 
 function App() {
-  const fontColor = "red.900";
-  const backgroundColor = "red.100";
+  const fontColor = "gray.700";
+  const backgroundColor = "#B2DCDC";
   const borderRadius = 0;
   const todoWidth = 400;
   return (
@@ -39,7 +39,7 @@ function App() {
         </GridItem>
 
         <GridItem area="main">
-          <Main backgrounColor={backgroundColor}>
+          <Main bg={"BlackAlpha.300"}>
             <Routes>
               <Route path="/daily" element={<Daily />} />
               <Route

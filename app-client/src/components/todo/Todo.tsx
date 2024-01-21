@@ -1,6 +1,7 @@
 import { Box } from "@chakra-ui/react";
 import { TodoForm } from "./TodoForm";
 import { TodoTable } from "./TodoTable";
+import styles from "./Todo.module.css";
 
 interface Props {
   fontColor: string;
@@ -15,7 +16,7 @@ const Todo = ({ fontColor, backgroundColor, width }: Props) => {
 
   return (
     <>
-      <Box overflow={"scroll"}>
+      <Box className={[styles.todoContainer, styles["todo-border"]].join(" ")}>
         <TodoForm
           fontColor={backgroundColor}
           backgroundColor={fontColor}
