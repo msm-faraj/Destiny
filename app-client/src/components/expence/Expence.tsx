@@ -1,5 +1,6 @@
 import { Stack } from "@chakra-ui/react";
 import { ExpenceForm } from "./ExpenceForm";
+import { ExpenceTable } from "./ExpenceTable";
 
 const accountsArr = [
   "Cash",
@@ -27,6 +28,8 @@ const Expence = () => {
         accounts={accountsArr}
         categories={categoryArr}
       ></ExpenceForm>
+      <hr></hr>
+      <ExpenceTable></ExpenceTable>
     </Stack>
   );
 };

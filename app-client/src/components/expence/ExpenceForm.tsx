@@ -1,5 +1,6 @@
 import {
   Button,
+  Divider,
   FormControl,
   FormLabel,
   Input,
@@ -10,6 +11,7 @@ import {
   NumberInputStepper,
   Select,
   Stack,
+  Text,
 } from "@chakra-ui/react";
 
 interface Props {
@@ -20,7 +22,10 @@ interface Props {
 export const ExpenceForm = ({ accounts, categories }: Props) => {
   return (
     <form>
-      <Stack>
+      <Stack bg={"gray.400"} p={2} borderRadius={10}>
+        <Text as="b" fontSize={"3xl"} pb={"5"}>
+          Expence Form
+        </Text>
         {/* Account */}
         <FormControl>
           <FormLabel>Account</FormLabel>
