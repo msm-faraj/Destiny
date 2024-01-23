@@ -17,9 +17,9 @@ import "./App.css";
 
 function App() {
   const fontColor = "gray.700";
-  const backgroundColor = "#B2DCDC";
+  const backgroundColor = "gray.300";
   const borderRadius = 0;
-  const todoWidth = 400;
+  const todoWidth = "";
   return (
     <BrowserRouter>
       <LayOut>

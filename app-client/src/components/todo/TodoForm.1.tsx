@@ -1,11 +1,6 @@
-import { Button, Input, Stack, Text } from "@chakra-ui/react";
+import { Button, Input, Stack } from "@chakra-ui/react";
 import { FormEvent, useState } from "react";
-
-interface Props {
-  fontColor: string;
-  backgroundColor: string;
-  width: number;
-}
+import { Props } from "./TodoForm";
 
 export const TodoForm = ({ fontColor, backgroundColor, width }: Props) => {
   const [todo, setTodo] = useState({
@@ -27,16 +22,9 @@ export const TodoForm = ({ fontColor, backgroundColor, width }: Props) => {
 
   return (
     <form onSubmit={handleSubmit}>
-      <Stack
-        color={fontColor}
-        bg={backgroundColor}
-        p={2}
-        borderRadius={10}
-        border={"1px"}
-        borderColor={"gray.500"}
-      >
+      <Stack bg={"gray.400"} p={2} borderRadius={10}>
         <Text as="b" fontSize={"3xl"} pb={"5"}>
-          Todo Form{" "}
+          Expence Form
         </Text>
         <Input
           onChange={(event) => setTodo({ ...todo, name: event.target.value })}
