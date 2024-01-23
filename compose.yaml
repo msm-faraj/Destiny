@@ -34,6 +34,7 @@ services:
     volumes:
       - ./app-client/src:/app-client/src
       - ./app-client/public:/app-client/public
+      - ./app-client:/app-client
     networks:
       - destiny-net
 volumes:

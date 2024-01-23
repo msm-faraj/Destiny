@@ -3,7 +3,15 @@ import { FaPencilAlt } from "react-icons/fa";
 import { RiCheckboxBlankCircleLine } from "react-icons/ri";
 import { RiDeleteBin5Fill } from "react-icons/ri";
 
-import { TableContainer, Table, Tr, Tbody, Td } from "@chakra-ui/react";
+import {
+  TableContainer,
+  Table,
+  Tr,
+  Tbody,
+  Td,
+  Stack,
+  Text,
+} from "@chakra-ui/react";
 import { useEffect, useState } from "react";
 interface Props {
   fontColor: string;
@@ -42,42 +50,54 @@ export const TodoTable = ({ fontColor, backgroundColor, width }: Props) => {
   }, [todos]);
 
   return (
-    <TableContainer padding={2} width={width}>
-      <Table size="md" color={fontColor} bg={backgroundColor} borderRadius={5}>
-        <Tbody>
-          {todos.map((todo) => (
-            <Tr key={todo.id}>
-              {/* Checked todo */}
-              <Td width={5} p={1.5}>
-                <RiCheckboxBlankCircleLine />
-                {/* <RiCheckboxCircleFill /> */}
-              </Td>
+    <Stack
+      color={fontColor}
+      bg={backgroundColor}
+      p={2}
+      borderRadius={10}
+      border={"1px"}
+      borderColor={"gray.500"}
+    >
+      <Text as="b" fontSize={"3xl"} pb={"5"}>
+        Todo Form{" "}
+      </Text>
+      <TableContainer padding={2} width={width}>
+        <Table size="md" borderRadius={5}>
+          <Tbody>
+            {todos.map((todo) => (
+              <Tr key={todo.id}>
+                {/* Checked todo */}
+                <Td width={5} p={1.5}>
+                  <RiCheckboxBlankCircleLine />
+                  {/* <RiCheckboxCircleFill /> */}
+                </Td>
 
-              <Td p={0}>{todo.todoName}</Td>
+                <Td p={0}>{todo.todoName}</Td>
 
-              {/* Important Todo */}
-              <Td width={5} p={1.5}>
-                {/* <BsStarFill /> */}
-                <BsStar />
-              </Td>
+                {/* Important Todo */}
+                <Td width={5} p={1.5}>
+                  {/* <BsStarFill /> */}
+                  <BsStar />
+                </Td>
 
-              {/* Edit todo */}
-              <Td width={5} p={1.5}>
-                <FaPencilAlt />
-              </Td>
+                {/* Edit todo */}
+                <Td width={5} p={1.5}>
+                  <FaPencilAlt />
+                </Td>
 
-              {/* Delete todo */}
-              <Td width={5} p={1.5} color={"red.400"}>
-                <RiDeleteBin5Fill
-                  onClick={() => {
-                    deleteTodo(todo.id);
-                  }}
-                />
-              </Td>
-            </Tr>
-          ))}
-        </Tbody>
-      </Table>
-    </TableContainer>
+                {/* Delete todo */}
+                <Td width={5} p={1.5} color={"red.400"}>
+                  <RiDeleteBin5Fill
+                    onClick={() => {
+                      deleteTodo(todo.id);
+                    }}
+                  />
+                </Td>
+              </Tr>
+            ))}
+          </Tbody>
+        </Table>
+      </TableContainer>
+    </Stack>
   );
 };
