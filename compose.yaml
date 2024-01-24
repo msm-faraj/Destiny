@@ -20,7 +20,8 @@ services:
     ports:
       - 4040:4040
     volumes:
-      - ./app-server/src:/app-server/src
+      # - ./app-server/src:/app-server/src
+      - ./app-server:/app-server
 
     networks:
       - destiny-net
@@ -32,8 +33,8 @@ services:
       - 5173:5173
       - 3010:3010
     volumes:
-      - ./app-client/src:/app-client/src
-      - ./app-client/public:/app-client/public
+      # - ./app-client/src:/app-client/src
+      # - ./app-client/public:/app-client/public
       - ./app-client:/app-client
     networks:
       - destiny-net
