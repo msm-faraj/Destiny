@@ -8,7 +8,7 @@ router.post("/todos", async (req, res) => {
   try {
     const { name } = req.body;
     const newTodo = await todoTable.create({
-      todoName: name,
+      name: name,
     });
     res.json({
       status: 200,

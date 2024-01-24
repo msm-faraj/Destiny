@@ -23,7 +23,7 @@ function App() {
   const fontColor = "gray.700";
   const backgroundColor = "gray.300";
   const borderRadius = 0;
-  const todoWidth = "full";
+  const todoWidth = "50";
   return (
     <BrowserRouter>
       <LayOut isSidebarOpen={isOpen}>

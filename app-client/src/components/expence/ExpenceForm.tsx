@@ -45,7 +45,7 @@ export const ExpenceForm = ({ accounts, categories }: Props) => {
   const {
     register,
     handleSubmit,
-    formState: { errors },
+    formState: { errors, isValid },
   } = useForm<FormData>({ resolver: zodResolver(schema) });
 
   const expStyle = {
