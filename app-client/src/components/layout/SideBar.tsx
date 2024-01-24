@@ -1,4 +1,4 @@
-import { VStack, Box, HStack, Text } from "@chakra-ui/react";
+import { VStack, Box, HStack, Text, Divider } from "@chakra-ui/react";
 import { IoBookmarks } from "react-icons/io5";
 import { HiMiniShoppingBag } from "react-icons/hi2";
 import { MdFactCheck } from "react-icons/md";
@@ -10,6 +10,8 @@ import { Link } from "react-router-dom";
 import { useState } from "react";
 import { ImMenu } from "react-icons/im";
 import { IoColorPalette } from "react-icons/io5";
+import { FaAngleDoubleRight } from "react-icons/fa";
+import { FaAngleDoubleLeft } from "react-icons/fa";
 
 interface Props {
   backgrounColor: string;
@@ -23,7 +25,7 @@ const SideBar = ({
   backgrounColor,
   fontColor,
   onCloseSideBar: onClose,
-  isSideBarOpen: openSideBar,
+  isSideBarOpen,
 }: Props) => {
   const [selectedIndex, setSelectedIndex] = useState(-1);
 
@@ -62,14 +64,14 @@ const SideBar = ({
       icon: <HiMiniShoppingBag />,
     },
     {
-      path: "dashboard",
-      name: "dashboard",
-      icon: <MdDashboard />,
-    },
-    {
       path: "colors",
       name: "colors",
       icon: <IoColorPalette />,
+    },
+    {
+      path: "dashboard",
+      name: "dashboard",
+      icon: <MdDashboard />,
     },
   ];
 
@@ -86,13 +88,18 @@ const SideBar = ({
       borderRadius={10}
     >
       <HStack
-        pr={"1vw"}
+        pb={"1vh"}
+        pl={"1vh"}
+        pr={"1vh"}
         justifyContent={"right"}
         width={"full"}
         color={backgrounColor}
       >
-        <ImMenu onClick={onClose} />
+        <Box onClick={onClose}>
+          {isSideBarOpen ? <FaAngleDoubleLeft /> : <FaAngleDoubleRight />}
+        </Box>
       </HStack>
+      <Divider></Divider>
       {menuItems.map((item, index) => (
         <Link
           to={item.path}
@@ -102,27 +109,31 @@ const SideBar = ({
           <HStack
             display={"flex"}
             flexDirection={"row"}
-            alignItems={"center"}
-            gap={"0.7vw"}
-            width={openSideBar ? "12vw" : "4vw"}
-            h={"4vw"}
-            pt={"2vw"}
-            pl={1}
-            pb={"2vw"}
+            // alignItems={"center"}
+            gap={"0.7vh"}
+            width={isSideBarOpen ? "15vh" : "5vh"}
+            h={"4vh"}
+            pt={"2vh"}
+            pl={isSideBarOpen ? "1vh" : "1vh"}
+            pb={"2vh"}
             color={
               selectedIndex === index ? `${fontColor}` : `${backgrounColor}`
             }
             bg={selectedIndex === index ? `${backgrounColor}` : `${fontColor}`}
           >
-            <Box fontSize={"2.3vw"}>{item.icon}</Box>
-            {openSideBar && (
-              <Box fontFamily={"oswald"} fontWeight={"600"} fontSize={"1.7vw"}>
+            <Box fontSize={"3vh"}>{item.icon}</Box>
+            {isSideBarOpen && (
+              <Box
+                fontWeight={selectedIndex === index ? "bold" : "200"}
+                fontSize={"2vh"}
+              >
                 {item.name}
               </Box>
             )}
           </HStack>
         </Link>
       ))}
+      <Divider></Divider>
     </VStack>
   );
 };
