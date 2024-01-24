@@ -1,4 +1,4 @@
-import { VStack, Box, HStack } from "@chakra-ui/react";
+import { VStack, Box, HStack, Text } from "@chakra-ui/react";
 import { IoBookmarks } from "react-icons/io5";
 import { HiMiniShoppingBag } from "react-icons/hi2";
 import { MdFactCheck } from "react-icons/md";
@@ -8,26 +8,70 @@ import { MdDashboard } from "react-icons/md";
 import { FaCalendarDay } from "react-icons/fa6";
 import { Link } from "react-router-dom";
 import { useState } from "react";
+import { ImMenu } from "react-icons/im";
+import { IoColorPalette } from "react-icons/io5";
 
 interface Props {
   backgrounColor: string;
   fontColor: string;
   borderRadius: number;
+  isSideBarOpen: boolean;
+  onCloseSideBar: () => void;
 }
 
-const SideBar = ({ backgrounColor, fontColor }: Props) => {
+const SideBar = ({
+  backgrounColor,
+  fontColor,
+  onCloseSideBar: onClose,
+  isSideBarOpen: openSideBar,
+}: Props) => {
   const [selectedIndex, setSelectedIndex] = useState(-1);
 
-  const sideBarItems = {
-    Daily: <FaCalendarDay />,
-    task: <GrTasks />,
-    todo: <MdFactCheck />,
-    habit: <BsUiChecksGrid />,
-    event: <IoBookmarks />,
-    expence: <HiMiniShoppingBag />,
-    dashboard: <MdDashboard />,
-    colors: <MdDashboard />,
-  };
+  // const [isOpen, setIsIopen] = useState(false);
+  // const toggle = () => setIsIopen(!isOpen);
+
+  const menuItems = [
+    {
+      path: "daily",
+      name: "daily",
+      icon: <FaCalendarDay />,
+    },
+    {
+      path: "task",
+      name: "task",
+      icon: <GrTasks />,
+    },
+    {
+      path: "todo",
+      name: "todo",
+      icon: <MdFactCheck />,
+    },
+    {
+      path: "habit",
+      name: "habit",
+      icon: <BsUiChecksGrid />,
+    },
+    {
+      path: "event",
+      name: "event",
+      icon: <IoBookmarks />,
+    },
+    {
+      path: "expence",
+      name: "expence",
+      icon: <HiMiniShoppingBag />,
+    },
+    {
+      path: "dashboard",
+      name: "dashboard",
+      icon: <MdDashboard />,
+    },
+    {
+      path: "colors",
+      name: "colors",
+      icon: <IoColorPalette />,
+    },
+  ];
 
   return (
     <VStack
@@ -37,27 +81,46 @@ const SideBar = ({ backgrounColor, fontColor }: Props) => {
       display={"flex"}
       justifyContent={"flex-start"}
       alignItems={"flex-start"}
-      bg={backgrounColor}
-      spacing={4}
+      bg={fontColor}
+      spacing={"1vw"}
       borderRadius={10}
     >
-      {Object.keys(sideBarItems).map((key, index) => (
-        <Link key={key} to={`/${key}`} onClick={() => setSelectedIndex(index)}>
-          <Box
+      <HStack
+        pr={"1vw"}
+        justifyContent={"right"}
+        width={"full"}
+        color={backgrounColor}
+      >
+        <ImMenu onClick={onClose} />
+      </HStack>
+      {menuItems.map((item, index) => (
+        <Link
+          to={item.path}
+          key={index}
+          onClick={() => setSelectedIndex(index)}
+        >
+          <HStack
             display={"flex"}
             flexDirection={"row"}
             alignItems={"center"}
-            gap={1}
-            width={"12vw"}
-            p={1}
+            gap={"0.7vw"}
+            width={openSideBar ? "12vw" : "4vw"}
+            h={"4vw"}
+            pt={"2vw"}
+            pl={1}
+            pb={"2vw"}
             color={
-              selectedIndex === index ? `${backgrounColor}` : `${fontColor}`
+              selectedIndex === index ? `${fontColor}` : `${backgrounColor}`
             }
-            bg={selectedIndex === index ? `${fontColor}` : `${backgrounColor}`}
+            bg={selectedIndex === index ? `${backgrounColor}` : `${fontColor}`}
           >
-            <Box pl={1}>{Object.values(sideBarItems)[index]}</Box>
-            <Box>{key}</Box>
-          </Box>
+            <Box fontSize={"2.3vw"}>{item.icon}</Box>
+            {openSideBar && (
+              <Box fontFamily={"oswald"} fontWeight={"600"} fontSize={"1.7vw"}>
+                {item.name}
+              </Box>
+            )}
+          </HStack>
         </Link>
       ))}
     </VStack>

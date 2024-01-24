@@ -2,9 +2,10 @@ import { Grid } from "@chakra-ui/react";
 import { ReactNode } from "react";
 interface Props {
   children: ReactNode;
+  isSidebarOpen: boolean;
 }
 
-const LayOut = ({ children }: Props) => {
+const LayOut = ({ children, isSidebarOpen: openSideBar }: Props) => {
   return (
     <Grid
       p={1}
@@ -19,7 +20,7 @@ const LayOut = ({ children }: Props) => {
         `,
       }}
       gridTemplateRows={"6vh 80vh 12vh"}
-      gridTemplateColumns={"12vw 1fr"}
+      gridTemplateColumns={openSideBar ? "12vw 1fr" : "4vW 1fr"}
     >
       {children}
     </Grid>
