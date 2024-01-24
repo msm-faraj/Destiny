@@ -5,7 +5,7 @@ import { TodoTable } from "./TodoTable";
 interface Props {
   fontColor: string;
   backgroundColor: string;
-  width: number;
+  width: string;
 }
 
 const Todo = ({ fontColor, backgroundColor, width }: Props) => {
