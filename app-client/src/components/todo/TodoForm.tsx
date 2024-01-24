@@ -28,6 +28,7 @@ export const TodoForm = ({ fontColor, backgroundColor, width }: Props) => {
   return (
     <form onSubmit={handleSubmit}>
       <Stack
+        width={width}
         color={fontColor}
         bg={backgroundColor}
         p={2}

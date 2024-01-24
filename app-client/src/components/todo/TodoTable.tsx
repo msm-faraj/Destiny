@@ -72,7 +72,7 @@ export const TodoTable = ({ fontColor, backgroundColor, width }: Props) => {
                   {/* <RiCheckboxCircleFill /> */}
                 </Td>
 
-                <Td p={0}>{todo.todoName}</Td>
+                <Td p={0}>{todo.name}</Td>
 
                 {/* Important Todo */}
                 <Td width={5} p={1.5}>
