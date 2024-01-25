@@ -10,11 +10,12 @@ const Main = ({ children, bg }: Props) => {
   return (
     <Grid
       p={5}
-      w={"full"}
-      h={"full"}
+      w={"100%"}
+      h={"100%"}
       bg={bg}
-      borderRadius={20}
+      borderRadius={10}
       overflowY={"scroll"}
+      overflowX={"auto"}
     >
       {children}
     </Grid>

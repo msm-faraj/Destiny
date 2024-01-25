@@ -53,6 +53,7 @@ export const ExpenceForm = ({ accounts, categories }: Props) => {
     borderColor: "gray.500",
     borderRadius: "10",
     textDatnger: "red.700",
+    buttonBg: "gray.300",
   };
 
   const onSubmit = (data: FieldValues) => console.log(data);
@@ -78,6 +79,9 @@ export const ExpenceForm = ({ accounts, categories }: Props) => {
               </Td>
               <Box>
                 <Select
+                  borderRadius={expStyle.borderRadius}
+                  border={expStyle.border}
+                  borderColor={expStyle.borderColor}
                   {...register("account")}
                   id="account"
                   placeholder="Select country"
@@ -100,6 +104,9 @@ export const ExpenceForm = ({ accounts, categories }: Props) => {
               </Td>
               <Box>
                 <Input
+                  borderRadius={expStyle.borderRadius}
+                  border={expStyle.border}
+                  borderColor={expStyle.borderColor}
                   {...register("time", { valueAsDate: true })}
                   id="time"
                   type="datetime-local"
@@ -117,6 +124,9 @@ export const ExpenceForm = ({ accounts, categories }: Props) => {
               </Td>
               <Box>
                 <Select
+                  borderRadius={expStyle.borderRadius}
+                  border={expStyle.border}
+                  borderColor={expStyle.borderColor}
                   id="category"
                   {...register("category")}
                   placeholder="Select country"
@@ -125,6 +135,7 @@ export const ExpenceForm = ({ accounts, categories }: Props) => {
                     <option>{category}</option>
                   ))}
                 </Select>
+
                 {errors.category && (
                   <Text color={expStyle.textDatnger}>
                     {errors.category.message}
@@ -140,13 +151,12 @@ export const ExpenceForm = ({ accounts, categories }: Props) => {
               <Box>
                 <NumberInput max={1000000000000000} min={0}>
                   <NumberInputField
+                    borderRadius={expStyle.borderRadius}
+                    border={expStyle.border}
+                    borderColor={expStyle.borderColor}
                     {...register("amount", { valueAsNumber: true })}
                     id="amount"
                   />
-                  <NumberInputStepper>
-                    <NumberIncrementStepper />
-                    <NumberDecrementStepper />
-                  </NumberInputStepper>
                 </NumberInput>
               </Box>
               {errors.amount && (
@@ -162,6 +172,9 @@ export const ExpenceForm = ({ accounts, categories }: Props) => {
               </Td>
               <Box>
                 <Input
+                  borderRadius={expStyle.borderRadius}
+                  border={expStyle.border}
+                  borderColor={expStyle.borderColor}
                   id="note"
                   {...register("note")}
                   type="text"
@@ -179,6 +192,9 @@ export const ExpenceForm = ({ accounts, categories }: Props) => {
               </Td>
               <Box>
                 <Input
+                  borderRadius={expStyle.borderRadius}
+                  border={expStyle.border}
+                  borderColor={expStyle.borderColor}
                   id="description"
                   {...register("description")}
                   type="text"
@@ -192,7 +208,14 @@ export const ExpenceForm = ({ accounts, categories }: Props) => {
               )}
             </Tr>
           </Table>
-          <Button width={"full"} type="submit">
+          <Button
+            bg={expStyle.buttonBg}
+            borderRadius={expStyle.borderRadius}
+            border={expStyle.border}
+            borderColor={expStyle.borderColor}
+            width={"full"}
+            type="submit"
+          >
             Create Expence
           </Button>
         </FormControl>

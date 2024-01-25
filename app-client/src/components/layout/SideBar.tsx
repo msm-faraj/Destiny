@@ -89,13 +89,12 @@ const SideBar = ({
     >
       <HStack
         pb={"1vh"}
-        pl={"1vh"}
         pr={"1vh"}
         justifyContent={"right"}
         width={"full"}
         color={backgrounColor}
       >
-        <Box onClick={onClose}>
+        <Box fontSize={"3vh"} onClick={onClose}>
           {isSideBarOpen ? <FaAngleDoubleLeft /> : <FaAngleDoubleRight />}
         </Box>
       </HStack>
