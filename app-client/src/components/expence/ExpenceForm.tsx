@@ -1,15 +1,10 @@
 import {
   Button,
-  Divider,
   FormControl,
   FormLabel,
-  HStack,
   Input,
-  NumberDecrementStepper,
-  NumberIncrementStepper,
   NumberInput,
   NumberInputField,
-  NumberInputStepper,
   Select,
   Stack,
   Text,
@@ -21,6 +16,8 @@ import {
 import { FieldValues, useForm } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod/dist/zod.js";
+import { useEffect, useState } from "react";
+import axios from "axios";
 
 const schema = z.object({
   account: z
@@ -48,6 +45,7 @@ export const ExpenceForm = ({ accounts, categories }: Props) => {
     formState: { errors, isValid },
   } = useForm<FormData>({ resolver: zodResolver(schema) });
 
+  //Style object of component
   const expStyle = {
     border: "1px",
     borderColor: "gray.500",
@@ -56,7 +54,18 @@ export const ExpenceForm = ({ accounts, categories }: Props) => {
     buttonBg: "gray.300",
   };
 
-  const onSubmit = (data: FieldValues) => console.log(data);
+  // Send form data to the server
+  const onSubmit = async (formData: FormData) => {
+    try {
+      await fetch("http://localhost:4040/expences", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+    } catch (error: any) {
+      console.error(error.message);
+    }
+  };
 
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
@@ -67,11 +76,11 @@ export const ExpenceForm = ({ accounts, categories }: Props) => {
         border={expStyle.border}
         borderColor={expStyle.borderColor}
       >
-        <Text as="b" fontSize={"3xl"} pb={"5"}>
+        <Text as="b" fontSize={"xl"} pb={"2"}>
           Expence Form
         </Text>
         <FormControl>
-          <Table width={"-moz-fit-content"}>
+          <Table size={"sm"} width={"-moz-fit-content"}>
             {/* Account */}
             <Tr>
               <Td border={"none"}>
