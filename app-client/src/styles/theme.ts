@@ -6,8 +6,8 @@ export const destinyTheme = extendTheme({
     black: "#000",
     white: "#fff",
     gray: {
-      900: "#171923",
       // 900: "#492F36",
+      900: "#171923",
       800: "#1A202C",
       700: "#2D3748",
       600: "#4A5568",
