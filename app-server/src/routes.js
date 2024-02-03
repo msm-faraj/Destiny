@@ -53,7 +53,9 @@ router.get("/todos", async (req, res) => {
 // Get all expences
 router.get("/expences", async (req, res) => {
   try {
-    const allExpences = await expenceTable.findAll();
+    const allExpences = await expenceTable.findAll({
+      order: [["id", "DESC"]],
+    });
     res.json(allExpences);
   } catch (error) {
     cconsole.error(error.message);

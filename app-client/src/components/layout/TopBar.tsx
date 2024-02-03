@@ -1,19 +1,20 @@
 import { HStack, Text } from "@chakra-ui/react";
 import { BiGitRepoForked } from "react-icons/bi";
+import ColorModeSwitch from "./ColorModeSwitch";
 
 interface Props {
-  backgrounColor: string;
-  fontColor: string;
+  // backgrounColor: string;
+  // fontColor: string;
 }
 
-const TopBar = ({ backgrounColor, fontColor }: Props) => {
+const TopBar = ({}: Props) => {
   return (
     <>
       <HStack
         w={"full"}
         h={"full"}
-        bg={backgrounColor}
-        color={fontColor}
+        bg={"gray.400"}
+        color={"gray.900"}
         pl={5}
         pr={5}
         display={"flex"}
@@ -21,8 +22,11 @@ const TopBar = ({ backgrounColor, fontColor }: Props) => {
         alignItems={"center"}
         borderRadius={10}
       >
-        <BiGitRepoForked />
-        <Text>Destiny</Text>
+        <BiGitRepoForked fontSize={30} />
+        <Text as="b" fontSize={25}>
+          {` D E S T I Y `}
+        </Text>
+        <ColorModeSwitch></ColorModeSwitch>
       </HStack>
     </>
   );

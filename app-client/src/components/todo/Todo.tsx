@@ -3,25 +3,25 @@ import { TodoForm } from "./TodoForm";
 import { TodoTable } from "./TodoTable";
 
 interface Props {
-  fontColor: string;
-  backgroundColor: string;
-  width: string;
+  // fontColor: string;
+  // backgroundColor: string;
+  // width: string;
 }
 
-const Todo = ({ fontColor, backgroundColor, width }: Props) => {
+const Todo = ({}: Props) => {
   return (
     <>
       <Stack>
         <TodoForm
-          fontColor={backgroundColor}
-          backgroundColor={fontColor}
-          width={width}
+        // fontColor={backgroundColor}
+        // backgroundColor={fontColor}
+        // width={width}
         ></TodoForm>
         <hr></hr>
         <TodoTable
-          fontColor={fontColor}
-          backgroundColor={backgroundColor}
-          width={width}
+        // fontColor={fontColor}
+        // backgroundColor={backgroundColor}
+        // width={width}
         ></TodoTable>
       </Stack>
     </>

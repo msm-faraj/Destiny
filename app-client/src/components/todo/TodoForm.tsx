@@ -2,12 +2,12 @@ import { Button, Input, Stack, Text } from "@chakra-ui/react";
 import { FormEvent, useState } from "react";
 
 interface Props {
-  fontColor: string;
-  backgroundColor: string;
-  width: number;
+  // fontColor: string;
+  // backgroundColor: string;
+  // width: number;
 }
 
-export const TodoForm = ({ fontColor, backgroundColor, width }: Props) => {
+export const TodoForm = ({}: Props) => {
   const [todo, setTodo] = useState({
     name: "",
   });
@@ -28,9 +28,9 @@ export const TodoForm = ({ fontColor, backgroundColor, width }: Props) => {
   return (
     <form onSubmit={handleSubmit}>
       <Stack
-        width={width}
-        color={fontColor}
-        bg={backgroundColor}
+        // width={width}
+        // color={fontColor}
+        // bg={backgroundColor}
         p={2}
         borderRadius={10}
         border={"1px"}

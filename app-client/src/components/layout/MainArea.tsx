@@ -3,16 +3,14 @@ import { ReactNode } from "react";
 
 interface Props {
   children: ReactNode;
-  bg: string;
 }
 
-const Main = ({ children, bg }: Props) => {
+const Main = ({ children }: Props) => {
   return (
     <Grid
       p={5}
       w={"100%"}
       h={"100%"}
-      bg={bg}
       borderRadius={10}
       overflowY={"scroll"}
       overflowX={"auto"}

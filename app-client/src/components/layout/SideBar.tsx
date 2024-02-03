@@ -1,4 +1,4 @@
-import { VStack, Box, HStack, Text, Divider } from "@chakra-ui/react";
+import { VStack, Box, HStack, Divider } from "@chakra-ui/react";
 import { IoBookmarks } from "react-icons/io5";
 import { HiMiniShoppingBag } from "react-icons/hi2";
 import { MdFactCheck } from "react-icons/md";
@@ -8,24 +8,23 @@ import { MdDashboard } from "react-icons/md";
 import { FaCalendarDay } from "react-icons/fa6";
 import { Link } from "react-router-dom";
 import { useState } from "react";
-import { ImMenu } from "react-icons/im";
 import { IoColorPalette } from "react-icons/io5";
 import { FaAngleDoubleRight } from "react-icons/fa";
 import { FaAngleDoubleLeft } from "react-icons/fa";
 
 interface Props {
-  backgrounColor: string;
-  fontColor: string;
-  borderRadius: number;
+  // backgrounColor: string;
+  // fontColor: string;
+  // borderRadius: number;
   isSideBarOpen: boolean;
   onCloseSideBar: () => void;
 }
 
 const SideBar = ({
-  backgrounColor,
-  fontColor,
-  onCloseSideBar: onClose,
+  // backgrounColor,
+  // fontColor,
   isSideBarOpen,
+  onCloseSideBar: onClose,
 }: Props) => {
   const [selectedIndex, setSelectedIndex] = useState(-1);
 
@@ -83,7 +82,7 @@ const SideBar = ({
       display={"flex"}
       justifyContent={"flex-start"}
       alignItems={"flex-start"}
-      bg={fontColor}
+      bg={"gray.700"}
       spacing={"1vw"}
       borderRadius={10}
     >
@@ -92,7 +91,8 @@ const SideBar = ({
         pr={"1vh"}
         justifyContent={"right"}
         width={"full"}
-        color={backgrounColor}
+        // color={backgrounColor}
+        color={"gray.100"}
       >
         <Box fontSize={"3vh"} onClick={onClose}>
           {isSideBarOpen ? <FaAngleDoubleLeft /> : <FaAngleDoubleRight />}
@@ -115,14 +115,19 @@ const SideBar = ({
             pt={"2vh"}
             pl={isSideBarOpen ? "1vh" : "1vh"}
             pb={"2vh"}
-            color={
-              selectedIndex === index ? `${fontColor}` : `${backgrounColor}`
-            }
-            bg={selectedIndex === index ? `${backgrounColor}` : `${fontColor}`}
+            bg={selectedIndex === index ? `${"gray.50"}` : `${"gray.700"}`}
           >
-            <Box fontSize={"3vh"}>{item.icon}</Box>
+            <Box
+              color={selectedIndex === index ? `${"gray.900"}` : `${"gray.50"}`}
+              fontSize={"3vh"}
+            >
+              {item.icon}
+            </Box>
             {isSideBarOpen && (
               <Box
+                color={
+                  selectedIndex === index ? `${"gray.900"}` : `${"gray.50"}`
+                }
                 fontWeight={selectedIndex === index ? "bold" : "200"}
                 fontSize={"2vh"}
               >

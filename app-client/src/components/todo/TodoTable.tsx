@@ -14,12 +14,12 @@ import {
 } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
 interface Props {
-  fontColor: string;
-  backgroundColor: string;
-  width: number;
+  // fontColor: string;
+  // backgroundColor: string;
+  // width: number;
 }
 
-export const TodoTable = ({ fontColor, backgroundColor, width }: Props) => {
+export const TodoTable = ({}: Props) => {
   const [todos, setTodos] = useState([]);
 
   //Delete todo function
@@ -51,8 +51,8 @@ export const TodoTable = ({ fontColor, backgroundColor, width }: Props) => {
 
   return (
     <Stack
-      color={fontColor}
-      bg={backgroundColor}
+      // color={fontColor}
+      // bg={backgroundColor}
       p={2}
       borderRadius={10}
       border={"1px"}
@@ -61,7 +61,10 @@ export const TodoTable = ({ fontColor, backgroundColor, width }: Props) => {
       <Text as="b" fontSize={"3xl"} pb={"5"}>
         Todo Form{" "}
       </Text>
-      <TableContainer padding={2} width={width}>
+      <TableContainer
+        padding={2}
+        // width={width}
+      >
         <Table size="md" borderRadius={5}>
           <Tbody>
             {todos.map((todo) => (
