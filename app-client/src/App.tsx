@@ -13,24 +13,23 @@ import Footer from "./components/layout/Footer";
 import Main from "./components/layout/MainArea";
 import { ColorPalette } from "./components/colors/ColorPalette";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import "./App.css";
 import { useState } from "react";
 
 function App() {
   const [isOpen, setIsIopen] = useState(true);
   const sideBarToggle = () => setIsIopen(!isOpen);
 
-  const fontColor = "gray.700";
-  const backgroundColor = "gray.300";
-  const borderRadius = 0;
-  const todoWidth = "50";
+  // const fontColor = "gray.700";
+  // const backgroundColor = "gray.300";
+  // const borderRadius = 0;
+  // const todoWidth = "50";
   return (
     <BrowserRouter>
       <LayOut isSidebarOpen={isOpen}>
         <GridItem area="header">
           <TopBar
-            fontColor={backgroundColor}
-            backgrounColor={fontColor}
+          // fontColor={backgroundColor}
+          // backgrounColor={fontColor}
           ></TopBar>
         </GridItem>
 
@@ -38,23 +37,25 @@ function App() {
           <SideBar
             isSideBarOpen={isOpen}
             onCloseSideBar={sideBarToggle}
-            fontColor={fontColor}
-            backgrounColor={backgroundColor}
-            borderRadius={borderRadius}
+            // fontColor={fontColor}
+            // backgrounColor={backgroundColor}
+            // borderRadius={borderRadius}
           ></SideBar>
         </GridItem>
 
         <GridItem area="main">
-          <Main bg={"BlackAlpha.300"}>
+          <Main
+          // bg={"BlackAlpha.300"}
+          >
             <Routes>
               <Route path="/daily" element={<Daily />} />
               <Route
                 path="/todo"
                 element={
                   <Todo
-                    fontColor={fontColor}
-                    backgroundColor={backgroundColor}
-                    width={todoWidth}
+                  // fontColor={fontColor}
+                  // backgroundColor={backgroundColor}
+                  // width={todoWidth}
                   />
                 }
               />
@@ -70,8 +71,8 @@ function App() {
 
         <GridItem display={"block"} area="footer">
           <Footer
-            backgrounColor={fontColor}
-            fontColor={backgroundColor}
+          // backgrounColor={fontColor}
+          // fontColor={backgroundColor}
           ></Footer>
         </GridItem>
       </LayOut>

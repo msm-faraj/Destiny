@@ -8,16 +8,13 @@ import {
   Select,
   Stack,
   Text,
+  HStack,
   Box,
-  Tr,
-  Table,
-  Td,
+  Flex,
 } from "@chakra-ui/react";
-import { FieldValues, useForm } from "react-hook-form";
+import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod/dist/zod.js";
-import { useEffect, useState } from "react";
-import axios from "axios";
 
 const schema = z.object({
   account: z
@@ -46,16 +43,17 @@ export const ExpenceForm = ({ accounts, categories }: Props) => {
   } = useForm<FormData>({ resolver: zodResolver(schema) });
 
   //Style object of component
-  const expStyle = {
-    border: "1px",
-    borderColor: "gray.500",
-    borderRadius: "10",
-    textDatnger: "red.700",
-    buttonBg: "gray.300",
-  };
+  // const style = {
+  //   border: "1px",
+  //   borderColor: "gray.500",
+  //   borderRadius: "10",
+  //   textDatnger: "red.700",
+  //   buttonBg: "gray.300",
+  //   fontSize: "1.7vh",
+  // };
 
-  // Send form data to the server
-  const onSubmit = async (formData: FormData) => {
+  // Send form-data to the server
+  const addExpence = async (formData: FormData) => {
     try {
       await fetch("http://localhost:4040/expences", {
         method: "POST",
@@ -68,29 +66,37 @@ export const ExpenceForm = ({ accounts, categories }: Props) => {
   };
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)}>
+    <form onSubmit={handleSubmit(addExpence)}>
       <Stack
-        bg={"gray.400"}
+        // bg={"gray.400"}
         p={2}
-        borderRadius={expStyle.borderRadius}
-        border={expStyle.border}
-        borderColor={expStyle.borderColor}
+        // borderRadius={style.borderRadius}
+        // border={style.border}
+        // borderColor={style.borderColor}
       >
-        <Text as="b" fontSize={"xl"} pb={"2"}>
+        <Text fontSize={"xl"} pb={"2"}>
           Expence Form
         </Text>
         <FormControl>
-          <Table size={"sm"} width={"-moz-fit-content"}>
+          <Flex direction={"column"}>
             {/* Account */}
-            <Tr>
-              <Td border={"none"}>
-                <FormLabel htmlFor="account">Account</FormLabel>
-              </Td>
-              <Box>
+            <HStack>
+              <Box width={"20%"}>
+                {" "}
+                <FormLabel
+                  htmlFor="account"
+                  // fontSize={style.fontSize}
+                >
+                  Account
+                </FormLabel>
+              </Box>
+              <Box width={"45%"}>
+                {" "}
                 <Select
-                  borderRadius={expStyle.borderRadius}
-                  border={expStyle.border}
-                  borderColor={expStyle.borderColor}
+                  // fontSize={style.fontSize}
+                  // borderRadius={style.borderRadius}
+                  // border={style.border}
+                  // borderColor={style.borderColor}
                   {...register("account")}
                   id="account"
                   placeholder="Select country"
@@ -100,42 +106,64 @@ export const ExpenceForm = ({ accounts, categories }: Props) => {
                   ))}
                 </Select>
                 {errors.account && (
-                  <Text color={expStyle.textDatnger}>
+                  <Text
+                  // color={style.textDatnger}
+                  >
                     {errors.account.message}
                   </Text>
                 )}
               </Box>
-            </Tr>
+            </HStack>
             {/* Time  */}
-            <Tr justifyContent={"space-between"}>
-              <Td border={"none"}>
-                <FormLabel htmlFor="label">Time</FormLabel>
-              </Td>
-              <Box>
+            <HStack>
+              <Box width={"20%"}>
+                {" "}
+                <FormLabel
+                  // fontSize={style.fontSize}
+                  htmlFor="label"
+                >
+                  Time
+                </FormLabel>
+              </Box>
+              <Box width={"45%"}>
+                {" "}
                 <Input
-                  borderRadius={expStyle.borderRadius}
-                  border={expStyle.border}
-                  borderColor={expStyle.borderColor}
+                  // fontSize={style.fontSize}
+                  // borderRadius={style.borderRadius}
+                  // border={style.border}
+                  // borderColor={style.borderColor}
                   {...register("time", { valueAsDate: true })}
                   id="time"
                   type="datetime-local"
                   placeholder="Date & Time"
                 />
+                {errors.time && (
+                  <Text
+                  // color={style.textDatnger}
+                  >
+                    {errors.time.message}
+                  </Text>
+                )}
               </Box>
-              {errors.time && (
-                <Text color={expStyle.textDatnger}>{errors.time.message}</Text>
-              )}
-            </Tr>
+            </HStack>
             {/* Category */}
-            <Tr justifyContent={"space-between"}>
-              <Td border={"none"}>
-                <FormLabel htmlFor="category">Category</FormLabel>
-              </Td>
-              <Box>
+            <HStack>
+              <Box width={"20%"}>
+                {" "}
+                <FormLabel
+                  // fontSize={style.fontSize}
+                  htmlFor="category"
+                >
+                  Category
+                </FormLabel>
+              </Box>
+              <Box width={"45%"}>
+                {" "}
                 <Select
-                  borderRadius={expStyle.borderRadius}
-                  border={expStyle.border}
-                  borderColor={expStyle.borderColor}
+                  // fontSize={style.fontSize}
+                  // borderRadius={style.borderRadius}
+                  // border={style.border}
+                  // borderColor={style.borderColor}
                   id="category"
                   {...register("category")}
                   placeholder="Select country"
@@ -144,89 +172,123 @@ export const ExpenceForm = ({ accounts, categories }: Props) => {
                     <option>{category}</option>
                   ))}
                 </Select>
-
                 {errors.category && (
-                  <Text color={expStyle.textDatnger}>
+                  <Text
+                  // color={style.textDatnger}
+                  >
                     {errors.category.message}
                   </Text>
                 )}
               </Box>
-            </Tr>
+            </HStack>
             {/* Amount */}
-            <Tr justifyContent={"space-between"}>
-              <Td border={"none"}>
-                <FormLabel htmlFor="amoutn">Amount</FormLabel>
-              </Td>
-              <Box>
+            <HStack>
+              <Box width={"20%"}>
+                {" "}
+                <FormLabel
+                  // fontSize={style.fontSize}
+                  htmlFor="amoutn"
+                >
+                  Amount
+                </FormLabel>
+              </Box>
+              <Box width={"45%"}>
+                {" "}
                 <NumberInput max={1000000000000000} min={0}>
                   <NumberInputField
-                    borderRadius={expStyle.borderRadius}
-                    border={expStyle.border}
-                    borderColor={expStyle.borderColor}
+                    // fontSize={style.fontSize}
+                    // borderRadius={style.borderRadius}
+                    // border={style.border}
+                    // borderColor={style.borderColor}
                     {...register("amount", { valueAsNumber: true })}
                     id="amount"
+                    placeholder="00.00 $"
                   />
                 </NumberInput>
+                {errors.amount && (
+                  <Text
+                  // color={style.textDatnger}
+                  >
+                    {errors.amount.message}
+                  </Text>
+                )}
               </Box>
-              {errors.amount && (
-                <Text color={expStyle.textDatnger}>
-                  {errors.amount.message}
-                </Text>
-              )}
-            </Tr>
+            </HStack>
             {/* Note */}
-            <Tr justifyContent={"space-between"}>
-              <Td border={"none"}>
-                <FormLabel htmlFor="lable">Note</FormLabel>
-              </Td>
-              <Box>
+            <HStack>
+              <Box width={"20%"}>
+                <FormLabel
+                  // fontSize={style.fontSize}
+                  htmlFor="lable"
+                >
+                  Note
+                </FormLabel>
+              </Box>
+              <Box width={"45%"}>
+                {" "}
                 <Input
-                  borderRadius={expStyle.borderRadius}
-                  border={expStyle.border}
-                  borderColor={expStyle.borderColor}
+                  // fontSize={style.fontSize}
+                  // borderRadius={style.borderRadius}
+                  // border={style.border}
+                  // borderColor={style.borderColor}
                   id="note"
                   {...register("note")}
                   type="text"
                   placeholder="Note"
                 />
+                {errors.note && (
+                  <Text
+                  // color={style.textDatnger}
+                  >
+                    {errors.note.message}
+                  </Text>
+                )}
               </Box>
-              {errors.note && (
-                <Text color={expStyle.textDatnger}>{errors.note.message}</Text>
-              )}
-            </Tr>
+            </HStack>
             {/* Description */}
-            <Tr justifyContent={"space-between"}>
-              <Td border={"none"}>
-                <FormLabel htmlFor="description">Descripton</FormLabel>
-              </Td>
-              <Box>
+            <HStack>
+              <Box width={"20%"}>
+                <FormLabel
+                  // fontSize={style.fontSize}
+                  htmlFor="description"
+                >
+                  Descripton
+                </FormLabel>
+              </Box>
+              <Box width={"45%"}>
+                {" "}
                 <Input
-                  borderRadius={expStyle.borderRadius}
-                  border={expStyle.border}
-                  borderColor={expStyle.borderColor}
+                  // fontSize={style.fontSize}
+                  // borderRadius={style.borderRadius}
+                  // border={style.border}
+                  // borderColor={style.borderColor}
                   id="description"
                   {...register("description")}
                   type="text"
                   placeholder="Descripton"
                 />
+                {errors.description && (
+                  <Text
+                  // color={style.textDatnger}
+                  >
+                    {errors.description.message}
+                  </Text>
+                )}
               </Box>
-              {errors.description && (
-                <Text color={expStyle.textDatnger}>
-                  {errors.description.message}
-                </Text>
-              )}
-            </Tr>
-          </Table>
-          <Button
-            bg={expStyle.buttonBg}
-            borderRadius={expStyle.borderRadius}
-            border={expStyle.border}
-            borderColor={expStyle.borderColor}
-            width={"full"}
-            type="submit"
-          >
-            Create Expence
-          </Button>
+            </HStack>
+            <HStack>
+              <Button
+                mt={2}
+                // borderRadius={style.borderRadius}
+                // border={style.border}
+                // borderColor={style.borderColor}
+                width={"full"}
+                type="submit"
+              >
+                Create Expence
+              </Button>
+            </HStack>
+          </Flex>
         </FormControl>
       </Stack>
     </form>

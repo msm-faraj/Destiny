@@ -1,6 +1,6 @@
 const express = require("express");
-const todoTable = require("../models").todo;
-const expenceTable = require("../models").expence;
+const models = require("../../models");
+const expenceTable = require("../../models").expence;
 
 const router = express.Router();
 
@@ -8,7 +8,7 @@ const router = express.Router();
 router.post("/todos", async (req, res) => {
   try {
     const { name } = req.body;
-    const newTodo = await todoTable.create({
+    const newTodo = await models.todo.create({
       name: name,
     });
     res.json({
@@ -41,7 +41,7 @@ router.post("/expences", async (req, res) => {
 //Get all todos
 router.get("/todos", async (req, res) => {
   try {
-    const allTodos = await todoTable.findAll({
+    const allTodos = await models.findAll({
       order: [["id", "DESC"]],
     });
     res.json(allTodos);
@@ -66,7 +66,7 @@ router.get("/expences", async (req, res) => {
 router.get("/todos/:id", async (req, res) => {
   try {
     const { id } = req.params;
-    const todo = await todoTable.findOne({ where: { id: id } });
+    const todo = await models.findOne({ where: { id: id } });
     res.json(todo);
   } catch (error) {
     console.error(error.message);
@@ -79,7 +79,7 @@ router.get("/todos/:id", async (req, res) => {
 router.delete("/todos/:id", async (req, res) => {
   try {
     const { id } = req.params;
-    const deletedTodo = await todoTable.destroy({ where: { id: id } });
+    const deletedTodo = await models.destroy({ where: { id: id } });
     res.json(deletedTodo);
     console.log("deleted");
   } catch (error) {
@@ -88,3 +88,4 @@ router.delete("/todos/:id", async (req, res) => {
 });
 
 module.exports = router;
+

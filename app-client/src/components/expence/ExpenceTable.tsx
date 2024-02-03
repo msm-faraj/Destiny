@@ -25,9 +25,13 @@ export const ExpenceTable = () => {
   }, [expences]);
 
   return (
-    <Stack bg={"gray.400"} p={2} borderRadius={10}>
+    <Stack
+      // bg={"gray.400"}
+      p={2}
+      borderRadius={10}
+    >
       {/* Expence Table Title */}
-      <Text as="b" fontSize={"xl"} pb={"2"}>
+      <Text fontSize={"xl"} pb={"2"}>
         Expence Form
       </Text>
       {/* Expence List Table */}
