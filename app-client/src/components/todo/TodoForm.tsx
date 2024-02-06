@@ -1,4 +1,4 @@
-import { Button, Input, Stack, Text } from "@chakra-ui/react";
+import { Button, Heading, Input, Stack, Text } from "@chakra-ui/react";
 import { FormEvent, useState } from "react";
 
 interface Props {
@@ -36,9 +36,9 @@ export const TodoForm = ({}: Props) => {
         border={"1px"}
         borderColor={"gray.500"}
       >
-        <Text as="b" fontSize={"3xl"} pb={"5"}>
-          Todo Form{" "}
-        </Text>
+        <Heading as="h1" pb={"5"}>
+          Todo Form
+        </Heading>
         <Input
           onChange={(event) => setTodo({ ...todo, name: event.target.value })}
           value={todo.name}
@@ -47,7 +47,7 @@ export const TodoForm = ({}: Props) => {
           placeholder="new todo"
           size="md"
         />
-        <Button type="submit" size="md">
+        <Button type="submit" size="lg">
           Create New Todo
         </Button>
       </Stack>
