@@ -35,30 +35,27 @@ export const ExpenceTable = () => {
         Expence Form
       </Text>
       {/* Expence List Table */}
-      <Table size="sm" borderRadius={5}>
-        <Thead>
+      <Table size="xs" borderRadius={5}>
+        <Thead bg={"gray.500"} h={10}>
           <Tr>
-            <Td>account</Td>
-            <Td>category</Td>
-            <Td>amount</Td>
-            <Td>time</Td>
-            <Td>note</Td>
-            {/* {expences.map((expence, index) => (
-              <Td>{Object.keys(expence)[index]}</Td>
-            ))} */}
+            <Td p={1}>time</Td>
+            <Td p={1}>amount</Td>
+            <Td p={1}>account</Td>
+            <Td p={1}>category</Td>
+            <Td p={1}>note</Td>
           </Tr>
         </Thead>
-        {expences.map((expence, index) => (
-          <Tbody>
-            <Tr key={expence.id}>
+        <Tbody>
+          {expences.map((expence, i) => (
+            <Tr key={i}>
+              <Td>{expence.time}</Td>
+              <Td>{expence.amount}</Td>
               <Td>{expence.account}</Td>
               <Td>{expence.category}</Td>
-              <Td>{expence.amount}</Td>
-              <Td>{expence.time}</Td>
               <Td>{expence.note}</Td>
             </Tr>
-          </Tbody>
-        ))}
+          ))}
+        </Tbody>
       </Table>
     </Stack>
   );

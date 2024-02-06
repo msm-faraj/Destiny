@@ -101,8 +101,8 @@ export const ExpenceForm = ({ accounts, categories }: Props) => {
                   id="account"
                   placeholder="Select country"
                 >
-                  {accounts.map((account) => (
-                    <option>{account}</option>
+                  {accounts.map((account, i) => (
+                    <option key={i}>{account}</option>
                   ))}
                 </Select>
                 {errors.account && (
@@ -168,8 +168,8 @@ export const ExpenceForm = ({ accounts, categories }: Props) => {
                   {...register("category")}
                   placeholder="Select country"
                 >
-                  {categories.map((category) => (
-                    <option>{category}</option>
+                  {categories.map((category, i) => (
+                    <option key={i}>{category}</option>
                   ))}
                 </Select>
                 {errors.category && (

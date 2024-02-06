@@ -1,6 +1,8 @@
 import { extendTheme } from "@chakra-ui/react";
+// import styles from "./styles";
 
-export const destinyTheme = extendTheme({
+export const theme = extendTheme({
+  // styles,
   colors: {
     transparent: "transparent",
     black: "#000",
