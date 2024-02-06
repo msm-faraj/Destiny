@@ -35,7 +35,7 @@ const Daily = () => {
         </Box>
         <Box borderRadius={5}>
           <Text>Table</Text>
-          <TableContainer color={"#8B4600"}>
+          <TableContainer>
             <Table size="sm">
               <Thead>
                 <Tr>

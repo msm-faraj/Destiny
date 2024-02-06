@@ -11,10 +11,9 @@ const TopBar = ({}: Props) => {
   return (
     <>
       <HStack
+        boxShadow={"xl"}
         w={"full"}
         h={"full"}
-        bg={"gray.400"}
-        color={"gray.900"}
         pl={5}
         pr={5}
         display={"flex"}

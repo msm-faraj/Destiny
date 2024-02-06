@@ -9,14 +9,13 @@ import Habit from "./components/Habit/Habit";
 import Event from "./components/Event/Event";
 import Expence from "./components/expence/Expence";
 import Dashboard from "./components/dashboard/Dashboard";
-import Footer from "./components/layout/Footer";
 import Main from "./components/layout/MainArea";
 import { ColorPalette } from "./components/colors/ColorPalette";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { useState } from "react";
 
 function App() {
-  const [isOpen, setIsIopen] = useState(true);
+  const [isOpen, setIsIopen] = useState(false);
   const sideBarToggle = () => setIsIopen(!isOpen);
 
   // const fontColor = "gray.700";
@@ -37,9 +36,6 @@ function App() {
           <SideBar
             isSideBarOpen={isOpen}
             onCloseSideBar={sideBarToggle}
-            // fontColor={fontColor}
-            // backgrounColor={backgroundColor}
-            // borderRadius={borderRadius}
           ></SideBar>
         </GridItem>
 
@@ -67,13 +63,6 @@ function App() {
               <Route path="/colors" element={<ColorPalette />} />
             </Routes>
           </Main>
-        </GridItem>
-
-        <GridItem display={"block"} area="footer">
-          <Footer
-          // backgrounColor={fontColor}
-          // fontColor={backgroundColor}
-          ></Footer>
         </GridItem>
       </LayOut>
     </BrowserRouter>

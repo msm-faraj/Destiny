@@ -9,17 +9,16 @@ const LayOut = ({ children, isSidebarOpen: openSideBar }: Props) => {
   return (
     <Grid
       p={1}
-      gap={1}
       h={"100vh"}
       w={"100vw"}
       templateAreas={{
         base: `
         "header header"
         "aside main"
-        "aside footer"  
+        "aside main"  
         `,
       }}
-      gridTemplateRows={"6vh 80vh 12vh"}
+      gridTemplateRows={"6vh 1fr 8vh"}
       gridTemplateColumns={openSideBar ? "15vh 1fr" : "5vh 1fr"}
     >
       {children}

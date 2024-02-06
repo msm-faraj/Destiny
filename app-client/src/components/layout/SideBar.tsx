@@ -1,4 +1,12 @@
-import { VStack, Box, HStack, Divider } from "@chakra-ui/react";
+import {
+  VStack,
+  Box,
+  HStack,
+  Divider,
+  Avatar,
+  IconButton,
+  background,
+} from "@chakra-ui/react";
 import { IoBookmarks } from "react-icons/io5";
 import { HiMiniShoppingBag } from "react-icons/hi2";
 import { MdFactCheck } from "react-icons/md";
@@ -9,27 +17,16 @@ import { FaCalendarDay } from "react-icons/fa6";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import { IoColorPalette } from "react-icons/io5";
-import { FaAngleDoubleRight } from "react-icons/fa";
-import { FaAngleDoubleLeft } from "react-icons/fa";
+import { IoChevronForward } from "react-icons/io5";
+import { IoChevronBack } from "react-icons/io5";
 
 interface Props {
-  // backgrounColor: string;
-  // fontColor: string;
-  // borderRadius: number;
   isSideBarOpen: boolean;
   onCloseSideBar: () => void;
 }
 
-const SideBar = ({
-  // backgrounColor,
-  // fontColor,
-  isSideBarOpen,
-  onCloseSideBar: onClose,
-}: Props) => {
+const SideBar = ({ isSideBarOpen, onCloseSideBar: onClose }: Props) => {
   const [selectedIndex, setSelectedIndex] = useState(-1);
-
-  // const [isOpen, setIsIopen] = useState(false);
-  // const toggle = () => setIsIopen(!isOpen);
 
   const menuItems = [
     {
@@ -75,70 +72,76 @@ const SideBar = ({
   ];
 
   return (
-    <VStack
-      pt={2}
-      w={"full"}
-      h={"full"}
-      display={"flex"}
-      justifyContent={"flex-start"}
-      alignItems={"flex-start"}
-      bg={"gray.700"}
-      spacing={"1vw"}
-      borderRadius={10}
-    >
-      <HStack
-        pb={"1vh"}
-        pr={"1vh"}
-        justifyContent={"right"}
-        width={"full"}
-        // color={backgrounColor}
-        color={"gray.100"}
+    <Box h={"full"} boxShadow={"2xl"}>
+      <VStack
+        pt={2}
+        w={"full"}
+        h={"full"}
+        display={"flex"}
+        justifyContent={"flex-start"}
+        alignItems={"flex-start"}
+        spacing={"1vw"}
+        borderRadius={10}
       >
-        <Box fontSize={"3vh"} onClick={onClose}>
-          {isSideBarOpen ? <FaAngleDoubleLeft /> : <FaAngleDoubleRight />}
-        </Box>
-      </HStack>
-      <Divider></Divider>
-      {menuItems.map((item, index) => (
-        <Link
-          to={item.path}
-          key={index}
-          onClick={() => setSelectedIndex(index)}
+        {/* Sidebar Top */}
+        <HStack
+          pb={"1vh"}
+          pr={"1vh"}
+          justifyContent={"right"}
+          width={"full"}
+          color={"gray.100"}
         >
-          <HStack
-            display={"flex"}
-            flexDirection={"row"}
-            // alignItems={"center"}
-            gap={"0.7vh"}
-            width={isSideBarOpen ? "15vh" : "5vh"}
-            h={"4vh"}
-            pt={"2vh"}
-            pl={isSideBarOpen ? "1vh" : "1vh"}
-            pb={"2vh"}
-            bg={selectedIndex === index ? `${"gray.50"}` : `${"gray.700"}`}
+          <Avatar size={"sm"}></Avatar>
+          {/* Sidebar Close/Open Icon */}
+          <Box fontSize={"2vh"} onClick={onClose}>
+            {isSideBarOpen ? <IoChevronBack /> : <IoChevronForward />}
+          </Box>
+        </HStack>
+        <Divider></Divider>
+        {menuItems.map((item, index) => (
+          <Link
+            to={item.path}
+            key={index}
+            onClick={() => setSelectedIndex(index)}
           >
-            <Box
-              color={selectedIndex === index ? `${"gray.900"}` : `${"gray.50"}`}
-              fontSize={"3vh"}
+            <HStack
+              display={"flex"}
+              flexDirection={"row"}
+              gap={"0.7vh"}
+              width={isSideBarOpen ? "15vh" : "5vh"}
+              h={"4vh"}
+              pt={"2vh"}
+              pl={isSideBarOpen ? "1vh" : "1vh"}
+              pb={"2vh"}
+              // bg={selectedIndex === index ? `${"gray.700"}` : `${"gray.50"}`}
             >
-              {item.icon}
-            </Box>
-            {isSideBarOpen && (
+              {/* Sidebar Item Icon */}
               <Box
-                color={
-                  selectedIndex === index ? `${"gray.900"}` : `${"gray.50"}`
-                }
-                fontWeight={selectedIndex === index ? "bold" : "200"}
-                fontSize={"2vh"}
+                // color={
+                //   selectedIndex === index ? `${"gray.50"}` : `${"gray.700"}`
+                // }
+                fontSize={"3vh"}
               >
-                {item.name}
+                {item.icon}
               </Box>
-            )}
-          </HStack>
-        </Link>
-      ))}
-      <Divider></Divider>
-    </VStack>
+              {/* Sidevar Item Text */}
+              {isSideBarOpen && (
+                <Box
+                  // color={
+                  //   selectedIndex === index ? `${"gray.100"}` : `${"gray.800"}`
+                  // }
+                  // fontWeight={selectedIndex === index ? "400" : "200"}
+                  fontSize={"2vh"}
+                >
+                  {item.name}
+                </Box>
+              )}
+            </HStack>
+          </Link>
+        ))}
+        <Divider></Divider>
+      </VStack>
+    </Box>
   );
 };
 
