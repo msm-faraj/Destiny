@@ -113,29 +113,11 @@ const SideBar = ({ isSideBarOpen, onCloseSideBar: onClose }: Props) => {
               pt={"2vh"}
               pl={isSideBarOpen ? "1vh" : "1vh"}
               pb={"2vh"}
-              // bg={selectedIndex === index ? `${"gray.700"}` : `${"gray.50"}`}
             >
               {/* Sidebar Item Icon */}
-              <Box
-                // color={
-                //   selectedIndex === index ? `${"gray.50"}` : `${"gray.700"}`
-                // }
-                fontSize={"3vh"}
-              >
-                {item.icon}
-              </Box>
+              <Box fontSize={"3vh"}>{item.icon}</Box>
               {/* Sidevar Item Text */}
-              {isSideBarOpen && (
-                <Box
-                  // color={
-                  //   selectedIndex === index ? `${"gray.100"}` : `${"gray.800"}`
-                  // }
-                  // fontWeight={selectedIndex === index ? "400" : "200"}
-                  fontSize={"2vh"}
-                >
-                  {item.name}
-                </Box>
-              )}
+              {isSideBarOpen && <Box fontSize={"2vh"}>{item.name}</Box>}
             </HStack>
           </Link>
         ))}
