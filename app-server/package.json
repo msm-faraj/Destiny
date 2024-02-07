@@ -2,18 +2,20 @@
   "name": "app-server",
   "version": "1.0.0",
   "description": "",
-  "main": "server.js",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon src/server.js"
+    "start": "nodemon src/index.js"
   },
   "author": "msm-faraj",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.20.2",
+    "config": "^3.3.11",
     "cors": "^2.8.5",
     "express": "^4.18.2",
     "fs": "^0.0.1-security",
+    "joi": "^17.12.1",
     "nodemon": "3.0.2",
     "path": "^0.12.7",
     "pg": "^8.11.3",

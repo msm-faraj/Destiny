@@ -1,15 +1,18 @@
 const appRoutes = require("./routes");
+const Joi = require("joi");
 const express = require("express");
 const cors = require("cors");
 const app = express();
-const port = 4040;
+const todosRouter = require("./routes/controllers/todo/todos");
+const port = process.env.PORT || 4040;
 
 // Middleware
 app.use(express.json());
 app.use(cors());
+app.use("/todos", todosRouter);
 
 // Router
-app.use("/", appRoutes);
+// app.use("/", appRoutes);
 
 // Start the serever
 app.listen(port, () => {
