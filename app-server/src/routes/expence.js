@@ -1,11 +1,9 @@
 const express = require("express");
-const todoTable = require("../models").todo;
-const expenceTable = require("../models").expence;
-
 const router = express.Router();
+const expenceTable = require("../../models").expence;
 
 //Create new expence
-router.post("/expences", async (req, res) => {
+router.post("/", async (req, res) => {
   try {
     const { account, time, category, amount, note, description } = req.body;
     const newExpence = await expenceTable.create({
@@ -23,7 +21,7 @@ router.post("/expences", async (req, res) => {
 });
 
 // Get all expences
-router.get("/expences", async (req, res) => {
+router.get("/", async (req, res) => {
   try {
     const allExpences = await expenceTable.findAll({
       order: [["id", "DESC"]],

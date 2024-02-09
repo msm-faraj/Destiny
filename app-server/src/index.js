@@ -5,11 +5,13 @@ const express = require("express");
 const cors = require("cors");
 const app = express();
 const todosRouter = require("./routes/controllers/todo/todos");
+const expenceRouter = require("./routes/expence");
 const port = process.env.PORT || 4040;
 // Middleware
 app.use(express.json());
 app.use(cors());
 app.use("/todos", todosRouter);
+app.use("/expences", expenceRouter);
 
 // Router
 // app.use("/", appRoutes);
