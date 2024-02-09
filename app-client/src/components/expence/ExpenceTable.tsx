@@ -1,4 +1,13 @@
-import { Stack, Table, Tbody, Td, Text, Thead, Tr } from "@chakra-ui/react";
+import {
+  Stack,
+  Table,
+  Tbody,
+  Td,
+  Text,
+  Thead,
+  Tr,
+  Heading,
+} from "@chakra-ui/react";
 import axios from "axios";
 import { useEffect, useState } from "react";
 
@@ -31,12 +40,12 @@ export const ExpenceTable = () => {
       borderRadius={10}
     >
       {/* Expence Table Title */}
-      <Text fontSize={"xl"} pb={"2"}>
+      <Heading fontSize={"xl"} pb={"2"}>
         Expence Form
-      </Text>
+      </Heading>
       {/* Expence List Table */}
       <Table size="xs" borderRadius={5}>
-        <Thead bg={"gray.500"} h={10}>
+        <Thead h={10}>
           <Tr>
             <Td p={1}>time</Td>
             <Td p={1}>amount</Td>
