@@ -19,10 +19,10 @@ export const ExpenceTable = () => {
   const [expences, setExpences] = useState<Expence[]>([]);
 
   useEffect(() => {
-    axios
-      .get<Expence[]>("http://localhost:4040/expences")
-      .then((res) => setExpences(res.data));
-  }, [expences]);
+    axios.get<Expence[]>("http://localhost:4040/expences").then((res) => {
+      setExpences(res.data);
+    });
+  }, []);
 
   return (
     <Stack

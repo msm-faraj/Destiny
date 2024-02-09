@@ -42,16 +42,6 @@ export const ExpenceForm = ({ accounts, categories }: Props) => {
     formState: { errors, isValid },
   } = useForm<FormData>({ resolver: zodResolver(schema) });
 
-  //Style object of component
-  // const style = {
-  //   border: "1px",
-  //   borderColor: "gray.500",
-  //   borderRadius: "10",
-  //   textDatnger: "red.700",
-  //   buttonBg: "gray.300",
-  //   fontSize: "1.7vh",
-  // };
-
   // Send form-data to the server
   const addExpence = async (formData: FormData) => {
     try {
@@ -67,13 +57,7 @@ export const ExpenceForm = ({ accounts, categories }: Props) => {
 
   return (
     <form onSubmit={handleSubmit(addExpence)}>
-      <Stack
-        // bg={"gray.400"}
-        p={2}
-        // borderRadius={style.borderRadius}
-        // border={style.border}
-        // borderColor={style.borderColor}
-      >
+      <Stack p={2}>
         <Text fontSize={"xl"} pb={"2"}>
           Expence Form
         </Text>
@@ -83,20 +67,11 @@ export const ExpenceForm = ({ accounts, categories }: Props) => {
             <HStack>
               <Box width={"20%"}>
                 {" "}
-                <FormLabel
-                  htmlFor="account"
-                  // fontSize={style.fontSize}
-                >
-                  Account
-                </FormLabel>
+                <FormLabel htmlFor="account">Account</FormLabel>
               </Box>
               <Box width={"45%"}>
                 {" "}
                 <Select
-                  // fontSize={style.fontSize}
-                  // borderRadius={style.borderRadius}
-                  // border={style.border}
-                  // borderColor={style.borderColor}
                   {...register("account")}
                   id="account"
                   placeholder="Select country"
@@ -105,45 +80,24 @@ export const ExpenceForm = ({ accounts, categories }: Props) => {
                     <option key={i}>{account}</option>
                   ))}
                 </Select>
-                {errors.account && (
-                  <Text
-                  // color={style.textDatnger}
-                  >
-                    {errors.account.message}
-                  </Text>
-                )}
+                {errors.account && <Text>{errors.account.message}</Text>}
               </Box>
             </HStack>
             {/* Time  */}
             <HStack>
               <Box width={"20%"}>
                 {" "}
-                <FormLabel
-                  // fontSize={style.fontSize}
-                  htmlFor="label"
-                >
-                  Time
-                </FormLabel>
+                <FormLabel htmlFor="label">Time</FormLabel>
               </Box>
               <Box width={"45%"}>
                 {" "}
                 <Input
-                  // fontSize={style.fontSize}
-                  // borderRadius={style.borderRadius}
-                  // border={style.border}
-                  // borderColor={style.borderColor}
                   {...register("time", { valueAsDate: true })}
                   id="time"
                   type="datetime-local"
                   placeholder="Date & Time"
                 />
-                {errors.time && (
-                  <Text
-                  // color={style.textDatnger}
-                  >
-                    {errors.time.message}
-                  </Text>
-                )}
+                {errors.time && <Text>{errors.time.message}</Text>}
               </Box>
             </HStack>
             {/* Category */}
@@ -160,10 +114,6 @@ export const ExpenceForm = ({ accounts, categories }: Props) => {
               <Box width={"45%"}>
                 {" "}
                 <Select
-                  // fontSize={style.fontSize}
-                  // borderRadius={style.borderRadius}
-                  // border={style.border}
-                  // borderColor={style.borderColor}
                   id="category"
                   {...register("category")}
                   placeholder="Select country"
@@ -172,34 +122,19 @@ export const ExpenceForm = ({ accounts, categories }: Props) => {
                     <option key={i}>{category}</option>
                   ))}
                 </Select>
-                {errors.category && (
-                  <Text
-                  // color={style.textDatnger}
-                  >
-                    {errors.category.message}
-                  </Text>
-                )}
+                {errors.category && <Text>{errors.category.message}</Text>}
               </Box>
             </HStack>
             {/* Amount */}
             <HStack>
               <Box width={"20%"}>
                 {" "}
-                <FormLabel
-                  // fontSize={style.fontSize}
-                  htmlFor="amoutn"
-                >
-                  Amount
-                </FormLabel>
+                <FormLabel htmlFor="amoutn">Amount</FormLabel>
               </Box>
               <Box width={"45%"}>
                 {" "}
                 <NumberInput max={1000000000000000} min={0}>
                   <NumberInputField
-                    // fontSize={style.fontSize}
-                    // borderRadius={style.borderRadius}
-                    // border={style.border}
-                    // borderColor={style.borderColor}
                     {...register("amount", { valueAsNumber: true })}
                     id="amount"
                     placeholder="00.00 $"

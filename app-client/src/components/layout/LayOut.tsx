@@ -8,6 +8,7 @@ interface Props {
 const LayOut = ({ children, isSidebarOpen: openSideBar }: Props) => {
   return (
     <Grid
+      gap={1}
       p={1}
       h={"100vh"}
       w={"100vw"}

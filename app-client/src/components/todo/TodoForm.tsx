@@ -1,5 +1,5 @@
 import { Button, Heading, Input, Stack, Text } from "@chakra-ui/react";
-import { FormEvent, useState } from "react";
+import { FormEvent, useEffect, useRef, useState } from "react";
 
 interface Props {
   // fontColor: string;
@@ -8,6 +8,12 @@ interface Props {
 }
 
 export const TodoForm = ({}: Props) => {
+  const ref = useRef<HTMLInputElement>(null);
+  useEffect(() => {
+    //Side effect focus on input field
+    if (ref.current) ref.current.focus();
+  });
+
   const [todo, setTodo] = useState({
     name: "",
   });
@@ -27,27 +33,18 @@ export const TodoForm = ({}: Props) => {
 
   return (
     <form onSubmit={handleSubmit}>
-      <Stack
-        // width={width}
-        // color={fontColor}
-        // bg={backgroundColor}
-        p={2}
-        borderRadius={10}
-        border={"1px"}
-        borderColor={"gray.500"}
-      >
-        <Heading as="h1" pb={"5"}>
-          Todo Form
-        </Heading>
+      <Stack>
+        <Heading>Todo Form</Heading>
         <Input
+          ref={ref}
           onChange={(event) => setTodo({ ...todo, name: event.target.value })}
           value={todo.name}
           id="name"
           type="text"
           placeholder="new todo"
-          size="md"
+          size="sm"
         />
-        <Button type="submit" size="lg">
+        <Button type="submit" size="sm">
           Create New Todo
         </Button>
       </Stack>

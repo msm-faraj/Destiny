@@ -72,7 +72,7 @@ const SideBar = ({ isSideBarOpen, onCloseSideBar: onClose }: Props) => {
   ];
 
   return (
-    <Box h={"full"} boxShadow={"2xl"}>
+    <Box borderRadius={5} h={"full"} boxShadow={"2xl"}>
       <VStack
         pt={2}
         w={"full"}
@@ -81,7 +81,6 @@ const SideBar = ({ isSideBarOpen, onCloseSideBar: onClose }: Props) => {
         justifyContent={"flex-start"}
         alignItems={"flex-start"}
         spacing={"1vw"}
-        borderRadius={10}
       >
         {/* Sidebar Top */}
         <HStack

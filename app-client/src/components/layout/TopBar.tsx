@@ -11,7 +11,8 @@ const TopBar = ({}: Props) => {
   return (
     <>
       <HStack
-        boxShadow={"xl"}
+        borderRadius={5}
+        boxShadow={"base"}
         w={"full"}
         h={"full"}
         pl={5}
@@ -19,11 +20,10 @@ const TopBar = ({}: Props) => {
         display={"flex"}
         justifyContent={"space-between"}
         alignItems={"center"}
-        borderRadius={10}
       >
         <BiGitRepoForked fontSize={30} />
         <Text as="b" fontSize={25}>
-          {` D E S T I Y `}
+          {` D E S T I N Y `}
         </Text>
         <ColorModeSwitch></ColorModeSwitch>
       </HStack>

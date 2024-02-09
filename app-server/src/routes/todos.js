@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const todoTable = require("../../../../models").todo;
+const todoTable = require("../../models").todo;
 
 //Create new todo
 router.post("/", async (req, res) => {

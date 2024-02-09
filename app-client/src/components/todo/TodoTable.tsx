@@ -11,6 +11,7 @@ import {
   Td,
   Stack,
   Text,
+  Heading,
 } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
 interface Props {
@@ -40,6 +41,7 @@ export const TodoTable = ({}: Props) => {
       const response = await fetch("http://localhost:4040/todos");
       const jsonData = await response.json();
       setTodos(jsonData);
+      console.log("fuck");
     } catch (error: any) {
       console.log(error.message);
     }
@@ -47,20 +49,11 @@ export const TodoTable = ({}: Props) => {
 
   useEffect(() => {
     getTodos();
-  }, [todos]);
+  }, []);
 
   return (
-    <Stack
-      // color={fontColor}
-      // bg={backgroundColor}
-      p={2}
-      borderRadius={10}
-      border={"1px"}
-      borderColor={"gray.500"}
-    >
-      <Text as="b" fontSize={"3xl"} pb={"5"}>
-        Todo Form{" "}
-      </Text>
+    <Stack>
+      <Heading>Todo Form </Heading>
       <TableContainer
         padding={2}
         // width={width}

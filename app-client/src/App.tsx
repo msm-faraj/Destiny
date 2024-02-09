@@ -15,7 +15,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { useState } from "react";
 
 function App() {
-  const [isOpen, setIsIopen] = useState(false);
+  const [isOpen, setIsIopen] = useState(true);
   const sideBarToggle = () => setIsIopen(!isOpen);
 
   // const fontColor = "gray.700";
