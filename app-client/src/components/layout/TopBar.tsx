@@ -1,5 +1,4 @@
-import { HStack, Text } from "@chakra-ui/react";
-import { BiGitRepoForked } from "react-icons/bi";
+import { Avatar, HStack, Text } from "@chakra-ui/react";
 import ColorModeSwitch from "./ColorModeSwitch";
 
 interface Props {
@@ -21,7 +20,7 @@ const TopBar = ({}: Props) => {
         justifyContent={"space-between"}
         alignItems={"center"}
       >
-        <BiGitRepoForked fontSize={30} />
+        <Avatar size={"sm"}></Avatar>
         <Text as="b" fontSize={25}>
           {` D E S T I N Y `}
         </Text>

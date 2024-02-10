@@ -1,3 +1,4 @@
+const config = require("config");
 const express = require("express");
 const cors = require("cors");
 const app = express();
@@ -11,6 +12,11 @@ app.use(cors());
 app.use("/todos", todosRouter);
 app.use("/expences", expenceRouter);
 // app.use("/habit", habitRouter);
+
+// Configuration
+console.log("Application Name:", config.get("name"));
+console.log("Application Name:", config.get("mail.host"));
+// console.log("Application Pass:", config.get("mail.password"));
 
 // Startting the serever
 app.listen(port, () => {

@@ -1,0 +1,6 @@
+{
+  "name": "My Destiny App - Production",
+  "mail": {
+    "host": "prod-mail-sever"
+  }
+}

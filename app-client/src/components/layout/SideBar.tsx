@@ -3,9 +3,9 @@ import {
   Box,
   HStack,
   Divider,
-  Avatar,
-  IconButton,
-  background,
+  Heading,
+  Center,
+  Text,
 } from "@chakra-ui/react";
 import { IoBookmarks } from "react-icons/io5";
 import { HiMiniShoppingBag } from "react-icons/hi2";
@@ -16,9 +16,15 @@ import { MdDashboard } from "react-icons/md";
 import { FaCalendarDay } from "react-icons/fa6";
 import { Link } from "react-router-dom";
 import { useState } from "react";
-import { IoColorPalette } from "react-icons/io5";
 import { IoChevronForward } from "react-icons/io5";
 import { IoChevronBack } from "react-icons/io5";
+import { CiShoppingTag } from "react-icons/ci";
+import { CiGrid32 } from "react-icons/ci";
+import { CiWallet } from "react-icons/ci";
+import { CiCalendarDate } from "react-icons/ci";
+import { CiDumbbell } from "react-icons/ci";
+import { CiBoxList } from "react-icons/ci";
+import { CiViewTimeline } from "react-icons/ci";
 
 interface Props {
   isSideBarOpen: boolean;
@@ -32,95 +38,86 @@ const SideBar = ({ isSideBarOpen, onCloseSideBar: onClose }: Props) => {
     {
       path: "daily",
       name: "daily",
-      icon: <FaCalendarDay />,
+      iconB: <FaCalendarDay />,
+      icon: <CiCalendarDate />,
     },
     {
       path: "task",
       name: "task",
-      icon: <GrTasks />,
+      iconB: <GrTasks />,
+      icon: <CiViewTimeline />,
     },
     {
       path: "todo",
       name: "todo",
-      icon: <MdFactCheck />,
+      iconB: <MdFactCheck />,
+      icon: <CiBoxList />,
     },
     {
       path: "habit",
       name: "habit",
-      icon: <BsUiChecksGrid />,
+      iconB: <BsUiChecksGrid />,
+      icon: <CiDumbbell />,
     },
     {
       path: "event",
       name: "event",
-      icon: <IoBookmarks />,
+      iconB: <IoBookmarks />,
+      icon: <CiShoppingTag />,
     },
     {
       path: "expence",
       name: "expence",
-      icon: <HiMiniShoppingBag />,
-    },
-    {
-      path: "colors",
-      name: "colors",
-      icon: <IoColorPalette />,
+      iconB: <HiMiniShoppingBag />,
+      icon: <CiWallet />,
     },
     {
       path: "dashboard",
       name: "dashboard",
-      icon: <MdDashboard />,
+      iconB: <MdDashboard />,
+      icon: <CiGrid32 />,
     },
   ];
 
   return (
     <Box borderRadius={5} h={"full"} boxShadow={"2xl"}>
-      <VStack
-        pt={2}
-        w={"full"}
-        h={"full"}
-        display={"flex"}
-        justifyContent={"flex-start"}
-        alignItems={"flex-start"}
-        spacing={"1vw"}
-      >
-        {/* Sidebar Top */}
-        <HStack
-          pb={"1vh"}
-          pr={"1vh"}
-          justifyContent={"right"}
-          width={"full"}
-          color={"gray.100"}
-        >
-          <Avatar size={"sm"}></Avatar>
+      <VStack>
+        {/* Sidebar header */}
+        <HStack p={2} pb={0} justifyContent={"right"} width={"full"}>
           {/* Sidebar Close/Open Icon */}
-          <Box fontSize={"2vh"} onClick={onClose}>
+          <Box onClick={onClose}>
             {isSideBarOpen ? <IoChevronBack /> : <IoChevronForward />}
           </Box>
         </HStack>
+
         <Divider></Divider>
+
+        {/* Sidebar Body */}
         {menuItems.map((item, index) => (
-          <Link
-            to={item.path}
+          <VStack
+            p={1}
             key={index}
-            onClick={() => setSelectedIndex(index)}
+            justifyContent={"center"}
+            w={"100%"}
+            borderRadius={10}
           >
-            <HStack
-              display={"flex"}
-              flexDirection={"row"}
-              gap={"0.7vh"}
-              width={isSideBarOpen ? "15vh" : "5vh"}
-              h={"4vh"}
-              pt={"2vh"}
-              pl={isSideBarOpen ? "1vh" : "1vh"}
-              pb={"2vh"}
-            >
+            <Link to={item.path} onClick={() => setSelectedIndex(index)}>
               {/* Sidebar Item Icon */}
-              <Box fontSize={"3vh"}>{item.icon}</Box>
+              <Center p={1} pb={0} fontSize={"x-large"}>
+                {item.icon}
+              </Center>
               {/* Sidevar Item Text */}
-              {isSideBarOpen && <Box fontSize={"2vh"}>{item.name}</Box>}
-            </HStack>
-          </Link>
+              {isSideBarOpen && (
+                <Center>
+                  <Text as={"h2"} fontSize={"xs"} fontFamily={"roboto"}>
+                    {item.name}
+                  </Text>
+                </Center>
+              )}
+            </Link>
+            <Divider></Divider>
+          </VStack>
         ))}
-        <Divider></Divider>
       </VStack>
     </Box>
   );

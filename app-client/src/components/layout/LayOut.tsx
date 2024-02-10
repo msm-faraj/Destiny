@@ -20,7 +20,7 @@ const LayOut = ({ children, isSidebarOpen: openSideBar }: Props) => {
         `,
       }}
       gridTemplateRows={"6vh 1fr 8vh"}
-      gridTemplateColumns={openSideBar ? "15vh 1fr" : "5vh 1fr"}
+      gridTemplateColumns={openSideBar ? "80px 1fr" : "48px 1fr"}
     >
       {children}
     </Grid>

@@ -14,13 +14,8 @@ import {
   Heading,
 } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
-interface Props {
-  // fontColor: string;
-  // backgroundColor: string;
-  // width: number;
-}
 
-export const TodoTable = ({}: Props) => {
+export const TodoTable = () => {
   const [todos, setTodos] = useState([]);
 
   //Delete todo function

@@ -14,9 +14,7 @@ export const TodoForm = ({}: Props) => {
     if (ref.current) ref.current.focus();
   });
 
-  const [todo, setTodo] = useState({
-    name: "",
-  });
+  const [newTodo, setTodo] = useState({});
 
   const handleSubmit = async (event: FormEvent) => {
     event.preventDefault();
@@ -24,7 +22,7 @@ export const TodoForm = ({}: Props) => {
       await fetch("http://localhost:4040/todos", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(todo),
+        body: JSON.stringify(newTodo),
       });
     } catch (error: any) {
       console.error(error.message);
@@ -37,8 +35,10 @@ export const TodoForm = ({}: Props) => {
         <Heading>Todo Form</Heading>
         <Input
           ref={ref}
-          onChange={(event) => setTodo({ ...todo, name: event.target.value })}
-          value={todo.name}
+          onChange={(event) =>
+            setTodo({ ...newTodo, name: event.target.value })
+          }
+          value={newTodo.name}
           id="name"
           type="text"
           placeholder="new todo"
