@@ -2,22 +2,6 @@ const express = require("express");
 const router = express.Router();
 const todoTable = require("../../models").todo;
 
-//Create new todo
-router.post("/", async (req, res) => {
-  try {
-    const { name } = req.body;
-    const newTodo = await todoTable.create({
-      name: name,
-    });
-    res.json({
-      status: 200,
-      newTodo,
-    });
-  } catch (error) {
-    console.error(error.message);
-  }
-});
-
 //Get all todos
 router.get("/", async (req, res) => {
   try {
@@ -36,6 +20,22 @@ router.get("/:id", async (req, res) => {
     const { id } = req.params;
     const todo = await todoTable.findOne({ where: { id: id } });
     res.json(todo);
+  } catch (error) {
+    console.error(error.message);
+  }
+});
+
+//Create new todo
+router.post("/", async (req, res) => {
+  try {
+    const { name } = req.body;
+    const newTodo = await todoTable.create({
+      name: name,
+    });
+    res.json({
+      status: 200,
+      newTodo,
+    });
   } catch (error) {
     console.error(error.message);
   }
