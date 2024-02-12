@@ -1,35 +1,13 @@
 const express = require("express");
 const router = express.Router();
 const expenceTable = require("../../models").expence;
+const Contoroller = require("../controllers/expence/expence");
+const controller = new Contoroller(expenceTable);
+const reqHandler = require("../middleware/req-handler");
 
-//Create new expence
-router.post("/", async (req, res) => {
-  try {
-    const { account, time, category, amount, note, description } = req.body;
-    const newExpence = await expenceTable.create({
-      account: account,
-      time: time,
-      category: category,
-      amount: amount,
-      note: note,
-      description: description,
-    });
-    res.json(newExpence);
-  } catch (error) {
-    console.error(error.message);
-  }
-});
-
-// Get all expences
-router.get("/", async (req, res) => {
-  try {
-    const allExpences = await expenceTable.findAll({
-      order: [["id", "DESC"]],
-    });
-    res.json(allExpences);
-  } catch (error) {
-    cconsole.error(error.message);
-  }
-});
+router.get("/", reqHandler(controller.getAllExpences.bind(controller)));
+router.get("/:id", reqHandler(controller.getOneExpence.bind(controller)));
+router.post("/", reqHandler(controller.createOneExpences.bind(controller)));
+router.delete("/:id", reqHandler(controller.deleteOneExpence.bind(controller)));
 
 module.exports = router;

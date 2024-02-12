@@ -27,11 +27,10 @@ class TodoController {
     });
   }
 
-  async deleteTodo(req, res) {
+  async deleteOneTodo(req, res) {
     const { id } = req.params;
     const deletedTodo = await this.table.destroy({ where: { id: id } });
     return res.json(deletedTodo);
-    console.log("deleted");
   }
 }
 

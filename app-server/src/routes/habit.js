@@ -1,14 +1,11 @@
 const express = require("express");
 const router = express.Router();
 const habitTable = require("../../models").habit;
+const Contoroller = require("../controllers/habit/habit");
+const controller = new Contoroller(habitTable);
+const reqHandler = require("../middleware/req-handler");
 
-router.get("/", async (req, res) => {
-  try {
-    const allHabits = await habitTable.findAll({});
-    res.json(allHabits);
-  } catch (error) {
-    console.log(error.message);
-  }
-});
+router.get("/", reqHandler(controller.getAllHabits.bind(controller)));
+router.post("/", reqHandler(controller.createOneHabit.bind(controller)));
 
 module.exports = router;
