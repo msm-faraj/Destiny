@@ -21,11 +21,6 @@ app.use("/habits", habitRouter);
 app.use("/events", eventRouter);
 app.use("/users", userRouter);
 
-// Configuration
-console.log("Application Name:", config.get("name"));
-console.log("Application Name:", config.get("mail.host"));
-// console.log("Application Pass:", config.get("mail.password"));
-
 // Startting the serever
 app.listen(port, () => {
   console.log(`Destiny server has started on port ${port}`);
